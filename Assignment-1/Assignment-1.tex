@@ -203,8 +203,48 @@
     \[
         \eta=1-\frac{T_1}{T_2}.
     \]
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=.4\columnwidth]{A1-P3.png}
+    \end{figure}
 \end{prob}
 \begin{pf}
-    
+    等温过程 $A\rightarrow B$ 中，外界对气体做的功为
+    \begin{align}
+        W_{A\rightarrow B}=-\int_{V_A}^{V_B}P\,\mathrm{d}V=-RT_1\int_{V_A}^{V_B}\frac{\mathrm{d}V}{V}=-RT_1\ln\frac{V_B}{V_A}.
+    \end{align}
+    等温过程中理想气体的内能不变，故由热力学第一定律可知，气体从高温热源吸收的热量为
+    \begin{align}
+        Q_1=-W_{A\rightarrow B}=RT_1\ln\frac{V_B}{V_A}.
+    \end{align}
+    同理，等温过程 $C\rightarrow D$ 中，气体向低温热源释放的热量为
+    \begin{align}
+        Q_2=RT_2\ln\frac{V_C}{V_D}.
+    \end{align}
+    绝热过程 $B\rightarrow C$ 和 $D\rightarrow A$ 中，气体与外界均无热量交换，因此，在一个 Carnot 循环中，气体净吸收的热量为
+    \begin{align}
+        Q=Q_1-Q_2=RT_1\ln\frac{V_B}{V_A}-RT_2\ln\frac{V_C}{V_D}.
+    \end{align}
+    一个 Carnot 循环后，气体回到原来的状态，故内能变化为零，由热力学第一定律知，在整个循环中，气体对外做的净功为
+    \begin{align}
+        W=Q=RT_1\ln\frac{V_B}{V_A}-RT_2\ln\frac{V_C}{V_D}.
+    \end{align}
+    因为过程 $B\rightarrow C$ 和 $D\rightarrow A$ 绝热，故有
+    \begin{align}
+        T_1V_B^{\gamma-1}=&T_2V_C^{\gamma-1},\\
+        T_2V_D^{\gamma-1}=&T_1V_A^{\gamma-1}.
+    \end{align}
+    上面两式联立消去 $T_1$ 和 $T_2$，得
+    \begin{align}
+        \frac{V_B}{V_A}=\frac{V_C}{V_D}.
+    \end{align}
+    因此，
+    \begin{align}
+        W=R(T_1-T_2)\ln\frac{V_B}{V_A}.
+    \end{align}
+    在整个循环中，气体从高温热源吸收了热量 $Q_1$，对外做功 $W$，故循环效率为
+    \begin{align}
+        \eta=\frac{W}{Q_1}=\frac{R(T_1-T_2)\ln\frac{V_B}{V_A}}{RT_1\ln\frac{V_B}{V_A}}=1-\frac{T_2}{T_1}.
+    \end{align}
 \end{pf}
 \end{document}
