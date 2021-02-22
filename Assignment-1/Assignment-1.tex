@@ -14,10 +14,107 @@
 \end{prob}
 \begin{pf}
     \begin{itemize}
-        \item[1)] 
-        \item[2)] 
-        \item[3)] 
+        \item[1)] 将 $w$ 写作 $x$, $y$ 的函数
+        \begin{align}
+            w=w(x,y)
+        \end{align}
+        并取微分，有
+        \begin{align}
+            \label{1-dw}
+            \mathrm{d}w=\left(\frac{\partial w}{\partial x}\right)_y\mathrm{d}x+\left(\frac{\partial w}{\partial y}\right)_x\mathrm{d}y.
+        \end{align}
+        令上式中 $\mathrm{d}w=0$，得
+        \begin{align}
+            \label{1-dx/dy}
+            \left(\frac{\partial x}{\partial y}\right)_w=-\frac{\left(\frac{\partial w}{\partial y}\right)_x}{\left(\frac{\partial w}{\partial x}\right)_y}.
+        \end{align}
+        对式 $f(x,y,z)=0$ 取微分，有
+        \begin{align}
+            \label{1-df}
+            \mathrm{d}f=\left(\frac{\partial f}{\partial x}\right)_{y,z}\mathrm{d}x+\left(\frac{\partial f}{\partial y}\right)_{x,z}\mathrm{d}y+\left(\frac{\partial f}{\partial z}\right)_{x,y}\mathrm{d}z=0,
+        \end{align}
+        从而可将 $\mathrm{d}x$ 表示为
+        \begin{align}
+            \mathrm{d}x=-\frac{\left(\frac{\partial f}{\partial y}\right)_{x,z}\mathrm{d}y+\left(\frac{\partial f}{\partial z}\right)_{x,y}\mathrm{d}z}{\left(\frac{\partial f}{\partial x}\right)_{y,z}}.
+        \end{align}
+        将上式代入式 \eqref{1-dw}，得
+        \begin{align}
+            \mathrm{d}w=-\left(\frac{\partial w}{\partial x}\right)_y\frac{\left(\frac{\partial f}{\partial y}\right)_{x,z}\mathrm{d}y+\left(\frac{\partial f}{\partial z}\right)_{x,y}\mathrm{d}z}{\left(\frac{\partial f}{\partial x}\right)_{y,z}}+\left(\frac{\partial w}{\partial y}\right)_x\mathrm{d}y.
+        \end{align}
+        令上式中 $\mathrm{d}w=0$，得
+        \begin{align}
+            \label{1-dy/dz}
+            \left(\frac{\partial y}{\partial z}\right)_w=\frac{-\left(\frac{\partial w}{\partial x}\right)_y\left(\frac{\partial f}{\partial z}\right)_{x,y}}{\left(\frac{\partial w}{\partial x}\right)_y\left(\frac{\partial f}{\partial y}\right)_{x,z}-\left(\frac{\partial w}{\partial y}\right)_x\left(\frac{\partial f}{\partial x}\right)_{y,z}}.
+        \end{align}
+        由式 \eqref{1-df}，也可将 $\mathrm{d}y$ 表为
+        \begin{align}
+            \mathrm{d}y=-\frac{\left(\frac{\partial f}{\partial x}\right)_{y,z}\mathrm{d}x+\left(\frac{\partial f}{\partial z}\right)_{x,y}\mathrm{d}z}{\left(\frac{\partial f}{\partial y}\right)_{x,z}}.
+        \end{align}
+        将上式代入式 \eqref{1-dw}，得
+        \begin{align}
+            \mathrm{d}w=\left(\frac{\partial w}{\partial x}\right)_y\mathrm{d}x-\left(\frac{\partial w}{\partial y}\right)_x\frac{\left(\frac{\partial f}{\partial x}\right)_{y,z}\mathrm{d}x+\left(\frac{\partial f}{\partial z}\right)_{x,y}\mathrm{d}z}{\left(\frac{\partial f}{\partial y}\right)_{x,z}}.
+        \end{align}
+        令上式中 $\mathrm{d}w=0$ 得
+        \begin{align}
+            \label{1-dx/dz}
+            \left(\frac{\partial x}{\partial z}\right)_w=\frac{\left(\frac{\partial w}{\partial y}\right)_x\left(\frac{\partial f}{\partial z}\right)_{x,y}}{\left(\frac{\partial w}{\partial x}\right)_y\left(\frac{\partial f}{\partial y}\right)_{x,z}-\left(\frac{\partial w}{\partial y}\right)_x\left(\frac{\partial f}{\partial x}\right)_{y,z}}
+        \end{align}
+        式 \eqref{1-dx/dy} 与 \eqref{1-dy/dz} 相乘恰好等于式 \eqref{1-dx/dz}，
+        \begin{align}
+            \left(\frac{\partial x}{\partial y}\right)_w\left(\frac{\partial y}{\partial z}\right)_w=\frac{\left(\frac{\partial w}{\partial y}\right)_x\left(\frac{\partial f}{\partial z}\right)_{x,y}}{\left(\frac{\partial w}{\partial x}\right)_y\left(\frac{\partial f}{\partial y}\right)_{x,z}-\left(\frac{\partial w}{\partial y}\right)_x\left(\frac{\partial f}{\partial x}\right)_{y,z}}=\left(\frac{\partial x}{\partial z}\right)_w,
+        \end{align}
+        得证.
+        \item[2)] 令 $z$ 保持不变，即在式 \eqref{1-df} 中令 $\mathrm{d}z=0$，得
+        \begin{align}
+            \mathrm{d}f=\left(\frac{\partial f}{\partial x}\right)_{y,z}\mathrm{d}x+\left(\frac{\partial f}{\partial y}\right)_{x,z}\mathrm{d}y=0,
+        \end{align}
+        从而
+        \begin{align}
+            \label{1-dx/dy}
+            \left(\frac{\partial x}{\partial y}\right)_z=&-\frac{\left(\frac{\partial f}{\partial y}\right)_{x,z}}{\left(\frac{\partial f}{\partial x}\right)_{y,z}},\\
+            \left(\frac{\partial y}{\partial x}\right)_z=&-\frac{\left(\frac{\partial f}{\partial x}\right)_{y,z}}{\left(\frac{\partial f}{\partial y}\right)_{x,z}}.
+        \end{align}
+        上面两式相乘，得
+        \begin{align}
+            \left(\frac{\partial x}{\partial y}\right)_z\left(\frac{\partial y}{\partial x}\right)_z=1.
+        \end{align}
+        \item[3)] 令式 \eqref{1-df} 中的 $\mathrm{d}x=0$ ，得
+        \begin{align}
+            \label{1-dy/dz}
+            \left(\frac{\partial y}{\partial z}\right)_x=-\frac{\left(\frac{\partial f}{\partial z}\right)_{x,y}}{\left(\frac{\partial f}{\partial y}\right)_{x,z}}.
+        \end{align}
+        令式 \eqref{1-df} 中的 $\mathrm{d}y=0$，得
+        \begin{align}
+            \label{1-dz/dx}
+            \left(\frac{\partial z}{\partial x}\right)_y=-\frac{\left(\frac{\partial f}{\partial x}\right)_{y,z}}{\left(\frac{\partial f}{\partial z}\right)_{x,y}}.
+        \end{align}
+        式 \eqref{1-dx/dy}, \eqref{1-dy/dz} 和 \eqref{1-dz/dx} 相乘，得
+        \begin{align}
+            \left(\frac{\partial x}{\partial y}\right)_z\left(\frac{\partial y}{\partial z}\right)_x\left(\frac{\partial z}{\partial x}\right)_y=-1.
+        \end{align}
     \end{itemize}
+
+    理想气体的状态方程为
+    \begin{align}
+        PV=nRT.
+    \end{align}
+    \emph{验证 2)}：
+    \begin{align}
+        &\left\{\begin{array}{l}
+            \left(\frac{\partial P}{\partial T}\right)_V=\frac{nR}{V},\\
+            \left(\frac{\partial T}{\partial P}\right)_V=\frac{V}{nR},
+        \end{array}\right.\\
+        \Longrightarrow&\left(\frac{\partial P}{\partial T}\right)_V\left(\frac{\partial T}{\partial P}\right)_V=1.
+    \end{align}
+    \emph{验证 3)}：
+    \begin{align}
+        &\left\{\begin{array}{l}
+            \left(\frac{\partial P}{\partial T}\right)_V=\frac{nR}{V},\\
+            \left(\frac{\partial T}{\partial V}\right)_P=\frac{P}{nR},\\
+            \left(\frac{\partial V}{\partial P}\right)_T=-\frac{nRT}{P^2},
+        \end{array}\right.\\
+        \Longrightarrow&\left(\frac{\partial P}{\partial T}\right)_V\left(\frac{\partial T}{\partial V}\right)_P\left(\frac{\partial V}{\partial P}\right)_T=-\frac{nRT}{VP}=-1.
+    \end{align}
 \end{pf}
 
 \begin{prob}
