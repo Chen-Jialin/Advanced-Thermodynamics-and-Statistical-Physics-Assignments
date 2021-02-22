@@ -127,10 +127,72 @@
 \end{prob}
 \begin{sol}
     \begin{itemize}
-        \item[1)] 
-        \item[2)] 
-        \item[3)] 
+        \item[1)] 由热力学第一定律，
+        \begin{align}
+            \label{2-Thermodynamics-1st-Law}
+            \mathrm{d}U=\delta W+\delta Q
+        \end{align}
+        在绝热过程中，气体与外界无热量交换，$\delta Q=0$，而外界对气体所做的功为 $\delta W=-P\mathrm{d}V$. 对于理想气体，由焦耳定律知，内能的微分可表为 $\mathrm{d}U=C_V\,\mathrm{d}T$. 从而式 \eqref{2-Thermodynamics-1st-Law} 可化为
+        \begin{align}
+            \label{2-Thermodynamics-1st-Law-2}
+            C_V\mathrm{d}T+P\,\mathrm{d}V=0.
+        \end{align}
+        将理想气体的物态方程 $PV=nRT$ 全式进行微分，得
+        \begin{align}
+            P\,\mathrm{d}V+V\,\mathrm{d}P=nR\,\mathrm{d}T.
+        \end{align}
+        由于定压热容 $C_P$ 和定容热容 $C_V$ 之差为 $C_P-C_V=nR$，上式可化为
+        \begin{align}
+            \label{2-d(PV=nRT)}
+            P\,\mathrm{d}V+V\,\mathrm{d}p=(C_P-C_V)\,\mathrm{d}T=(\gamma-1)C_V\,\mathrm{d}T,
+        \end{align}
+        其中 $\gamma=C_P/C_V$. 联立式 \eqref{2-Thermodynamics-1st-Law-2} 和 \eqref{2-d(PV=nRT)}，消去 $C_V$，得
+        \begin{align}
+            V\,\mathrm{d}P+\gamma P\,\mathrm{d}V=0,
+        \end{align}
+        即
+        \begin{align}
+            \frac{\mathrm{d}P}{P}=-\gamma\frac{\mathrm{d}V}{V}.
+        \end{align}
+        在温度变化范围较小的情况下，可将 $\gamma$ 视为常数，对上式积分，得
+        \begin{align}
+            \label{PV^gamma=const}
+            PV^{\gamma}=\text{常数}.
+        \end{align}
+        \item[2)] 由理想气体的状态方程 $pV=nRT$，$P$ 可表为
+        \begin{align}
+            P=\frac{nRT}{V}.
+        \end{align}
+        将上式代入式 \eqref{PV^gamma=const}，得
+        \begin{align}
+            TV^{\gamma-1}=\text{常数}.
+        \end{align}
+        \item[3)] 由理想气体的状态方程 $pV=nRT$，$V$ 可表为
+        \begin{align}
+            V=\frac{nRT}{P}.
+        \end{align}
+        将上式代入式 \eqref{PV^gamma=const}，得
+        \begin{align}
+            P^{1-\gamma}T^{\gamma}=\text{常数}.
+        \end{align}
+        取上式的 $\frac{1}{1-\gamma}$ 次方，得
+        \begin{align}
+            pT^{\frac{\gamma}{1-\gamma}}=\text{常数}.
+        \end{align}
     \end{itemize}
+
+    理想气体从初态 $(P_1,V_1)$ 到末态 $(P_2,V_2)$ 对外界所做的功为
+    \begin{align}
+        W=\int_{V_1}^{V_2} P\,\mathrm{d}V=C\int_{V_1}^{V_2}\frac{\mathrm{d}V}{V^{\gamma}}=\frac{C}{\gamma-1}\left(\frac{1}{V_2^{\gamma-1}}-\frac{1}{V_1^{\gamma-1}}\right)
+    \end{align}
+    其中 $C$ 为常数，
+    \begin{align}
+        P_1V_1^{\gamma}=P_2V_2^{\gamma}=C.
+    \end{align}
+    故上式可化为
+    \begin{align}
+        W=\frac{P_2V_2-P_1V_1}{\gamma-1}.
+    \end{align}
 \end{sol}
 
 \begin{prob}
