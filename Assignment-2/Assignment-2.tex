@@ -52,9 +52,33 @@
 \end{prob}
 \begin{sol}
     \begin{itemize}
-        \item[1)] 
-        \item[2)] 
-        \item[3)] 
+        \item[1)] 自由能的全微分可表为
+        \begin{align}
+            \mathrm{d}F=-S\,\mathrm{d}T-P\,\mathrm{d}V.
+        \end{align}
+        由于自由能为一状态量，其变化仅与初末状态有关，而与演化路径无关. 该物质从状态 $(T_0,V_0)$ 等温膨胀至状态 $(T_0,V_0)$，自由能变化
+        \begin{align}
+            \label{2-DeltaF-1}
+            F(T_0,V)-F(T_0,V_0)=\int_{(T_0,V_0)}^{(T_,V)}\mathrm{d}F=-\int_{V_0}^VP\,\mathrm{d}V'=-W=-RT_0\ln\frac{V}{V_0}.
+        \end{align}
+        从状态 $(T_0,V)$ 定容升温至 $(T,V)$，自由能变化
+        \begin{align}
+            \label{2-DeltaF-2}
+            F(T,V)-F(T_0,V)=\int_{(T_0,V)}^{(T,V)}\mathrm{d}F=-\int_{T_0}^TS\,\mathrm{d}T'=-\int_{T_0}^TR\frac{V}{V_0}\left(\frac{T'}{T_0}\right)^a\,\mathrm{d}T'=-\frac{R}{a+1}\frac{V}{V_0}\left(\frac{T^{a+1}}{T_0^a}-T_0\right).
+        \end{align}
+        联立式 \eqref{2-DeltaF-1} 与 \eqref{2-DeltaF-2}，消去中间态 $(T_0,V)$ 的自由能 $F(T_0,V)$，得
+        \begin{align}
+            F(T,V)=F(T_0,V_0)-RT_0\ln\frac{V}{V_0}-\frac{R}{a+1}\frac{V}{V_0}\left(\frac{T^{a+1}}{T_0^a}-T_0\right).
+        \end{align}
+        \item[2)] 自由能对体积求偏导即得状态方程
+        \begin{align}
+            P=-\left(\frac{\partial F}{\partial V}\right)_T=\frac{RT}{V}+\frac{R}{a+1}\frac{1}{V_0}\left(\frac{T^{a+1}}{T_0^a}-T_0\right).
+        \end{align}
+        \item[3)] 在任意恒定温度 $T$ 下体积从 $V_0$ 膨胀到 $V$ 所做的功为
+        \begin{align}
+            \notag W=&-\int_{V_0}^VP\,\mathrm{d}V=-\int_{V_0}^V\left[\frac{RT}{V}+\frac{R}{a+1}\frac{1}{V_0}\left(\frac{T^{a+1}}{T_0^a}-T_0\right)\right]\,\mathrm{d}V\\
+            =&-RT\ln\frac{V}{V_0}-\frac{R}{a+1}\left(\frac{V}{V_0}-1\right)\left(\frac{T^{a+1}}{T_0}-T_0\right).
+        \end{align}
     \end{itemize}
 \end{sol}
 
