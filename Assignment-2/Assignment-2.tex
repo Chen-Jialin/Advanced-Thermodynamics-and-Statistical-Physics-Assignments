@@ -29,6 +29,31 @@
     \begin{align}
         S=C_V\ln T+nR\ln V+S_0.
     \end{align}
+    \emph{用以上结果和 Joule 自由膨胀实验论证熵增加原理}：在 Joule 自由膨胀实验中，气体自由膨胀，同时并不改变温度，也没有吸放热，故在此过程中
+    \begin{align}
+        \int_{(T_0,V_0)(\text{自由膨胀})}^{(T_0,V)}\frac{\delta Q}{T}=0.
+    \end{align}
+    假设气体的温度为 $T_0$，膨胀前体积为 $V_0$，膨胀后体积为 $V$，则自由膨胀前气体的熵为
+    \begin{align}
+        S(T_0,V_0)=C_V\ln T_0+nR\ln V_0+S_0.
+    \end{align}
+    膨胀后气体的熵为
+    \begin{align}
+        S(T_0,V)=C_V\ln T_0+nR\ln V+S_0.
+    \end{align}
+    膨胀前后气体的熵的变化值为
+    \begin{align}
+        S(T_0,V)-S(T_0,V_0)=nR\ln\frac{V}{V_0}.
+    \end{align}
+    气体自由膨胀是一绝热的不可逆过程，在此过程中
+    \begin{align}
+        \int_{(T_0,V_0)(\text{自由膨胀})}^{(T_0,V)}\frac{\delta Q}{T}=0<S(T_0,V)-S(T_0,V_0)=nR\ln\frac{V}{V_0},
+    \end{align}
+    即末状态的熵高于初状态的熵，
+    \begin{align}
+        S(T_0,V)>S(T_0,V_0).
+    \end{align}
+    这论证了熵增加原理 --- 一个绝热系统的熵永远不会降低.
 \end{sol}
 
 \begin{prob}
