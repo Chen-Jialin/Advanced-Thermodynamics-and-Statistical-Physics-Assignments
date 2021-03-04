@@ -115,13 +115,48 @@
     \end{itemize}
     \begin{figure}[h]
         \centering
-        \includegraphics[width=.4\columnwidth]{A2-P3.png}
+        \includegraphics[width=.4\columnwidth]{A2-P3-2.png}
     \end{figure}
 \end{prob}
 \begin{pf}
     \begin{itemize}
-        \item[1)] 
-        \item[2)] 
+        \item[1)] 对任意一过程（无论可逆与否），总有
+        \begin{align}
+            \delta Q\leq T\,\mathrm{d}S,
+        \end{align}
+        其中当且仅当过程为可逆过程时取等号. 假设沿回路的可逆循环吸热 $Q_2$，放热 $Q_1$，沿回路的某个一般循环吸热 $Q_2'$，放热 $Q_1'$，则一般热机的净吸热量低于或等于可逆热机的净吸热量
+        \begin{align}
+            \oint\delta Q=Q_2'-Q_1'\leq Q_2-Q_1=\oint T\,\mathrm{d}S.
+        \end{align}
+        对于可逆热机，$\delta Q=T\,\mathrm{d}S$，其仅在灰色区域下边界对应的过程中放热，而一般热机不仅在灰色区域下边界放热（一般热机在这一阶段放出的热量大于可逆热机在这一阶段放出的热量），还可能在其他阶段放热，因此一般热机放出的热量多于或等于可逆热机放出的热量
+        \begin{align}
+            Q_1'\geq Q_1.
+        \end{align}
+        从而一般热机 $\eta'$ 的效率不可能超过可逆循环的效率 $\eta$，
+        \begin{align}
+            \eta'=\frac{Q_2'-Q_1'}{Q_2'}\leq\frac{Q_2-Q_1}{Q_2}=\eta.
+        \end{align}
+        \item[2)] 如图中所示，设循环中熵的最小值为 $S_{\min}$，最大值为 $S_{\max}$，中间值为 $S_{\text{mid}}$，温度的中间值为 $T_{\text{mid}}$. 可逆热机吸热
+        \begin{align}
+            Q_1=T_{\min}(S_{\max}-S_{\min}),
+        \end{align}
+        放热
+        \begin{align}
+            Q_2=T_{\max}(S_{\text{mid}}-S_{\min})+T_{\text{mid}}(S_{\max}-S_{\text{mid}}).
+        \end{align}
+        故可逆热机效率为
+        \begin{align}
+            \eta=\frac{Q_2-Q_1}{Q_2}=1-\frac{T_{\min}(S_{\max}-S_{\min})}{T_{\max}(S_{\text{mid}}-S_{\text{min}})+T_{\min}(S_{\max}-S_{\text{mid}})}.
+        \end{align}
+        工作于最高和最低温度 $T_{\max}$ 和 $T_{\min}$ 之间的 Carnot 热机效率为
+        \begin{align}
+            \eta_{\text{Carnot}}=1-\frac{T_{\min}}{T_{\max}}.
+        \end{align}
+        可逆热机的效率低于 Carnot 热机的效率
+        \begin{align}
+            \notag\eta=&1-\frac{T_{\min}(S_{\max}-S_{\min})}{T_{\max}(S_{\text{mid}}-S_{\text{min}})+T_{\text{mid}}(S_{\max}-S_{\text{mid}})}\\
+            \leq&1-\frac{T_{\min}(S_{\max}-S_{\min})}{T_{\max}(S_{\text{mid}}-S_{\text{min}})+T_{\max}(S_{\max}-S_{\text{mid}})}=1-\frac{T_{\min}}{T_{\max}}=\eta_{\text{Carnot}}.
+        \end{align}
     \end{itemize}
 \end{pf}
 
