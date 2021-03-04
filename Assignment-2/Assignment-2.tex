@@ -7,7 +7,28 @@
     用所得结果和 Joule 自由膨胀实验论证熵增加原理.
 \end{prob}
 \begin{sol}
-    
+    对于一般系统，熵的全微分可表为
+    \begin{align}
+        \mathrm{d}S=\frac{C_V}{T}\,\mathrm{d}T+T\left(\frac{\partial P}{\partial T}\right)_V\mathrm{d}V.
+    \end{align}
+    对上式积分得
+    \begin{align}
+        \label{1-S}
+        S=\int\left[\frac{C_V}{T}\,\mathrm{d}T+\left(\frac{\partial p}{\partial T}\right)_V\mathrm{d}V\right]+S_0,
+    \end{align}
+    其中 $S_0$ 为一常数.
+    对于理想气体，有状态方程
+    \begin{align}
+        pV=nRT,
+    \end{align}
+    故
+    \begin{align}
+        \left(\frac{\partial p}{\partial T}\right)_V=\frac{nR}{V}.
+    \end{align}
+    将上式代入式 \eqref{1-S}，并且假设定容热容量 $C_V$ 为常数，积分得到理想气体的熵为
+    \begin{align}
+        S=C_V\ln T+nR\ln V+S_0.
+    \end{align}
 \end{sol}
 
 \begin{prob}
