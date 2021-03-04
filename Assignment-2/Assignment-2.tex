@@ -164,6 +164,24 @@
     从最小 Gibbs 势的原理而不用 Helmholtz 自由能推导气-液相变的 Maxwell 法则.
 \end{prob}
 \begin{pf}
-    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=.4\columnwidth]{A2-P4-2.png}
+    \end{figure}
+    假设图中虚线 1-2 所示范围对应实际的气-液共存态，气-液共存态下等温等压，故 Gibbs 自由能不变. $1$ 处 Gibbs 自由能为
+    \begin{align}
+        G_1=F_1+PV_1.
+    \end{align}
+    $2$ 处 Gibbs 自由能为
+    \begin{align}
+        G_2=F_2+PV_2.
+    \end{align}
+    这两点自由能相同，故有
+    \begin{gather}
+        G_2-G_1=F_2-F_1+PV_2-PV_1=-\int_{V_1}^{V_2}P\,\mathrm{d}V+P(V_2-V_1)=0,\\
+        \Longrightarrow\int_{V_1}^{V_2}P\,\mathrm{d}V=P(V_2-V_1),\\
+        \Longrightarrow\text{区域 A 的面积}=\text{区域 B 的面积}.
+    \end{gather}
+    此即 Maxwell 法则
 \end{pf}
 \end{document}
