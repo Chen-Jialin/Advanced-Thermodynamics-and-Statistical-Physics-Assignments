@@ -10,7 +10,26 @@
     其中 $O(\ln N)$ 表示误差与 $\ln N$ 同阶. （一个简单的证明方法是考虑用矩形法近似积分 $\int_1^N\mathrm{d}x\,\ln x$.）
 \end{prob}
 \begin{pf}
-    
+    对于大整数 $N$，
+    \begin{align}
+        \ln N!=\sum_{n=1}^N\ln n\approx\int_1^N\mathrm{d}x\,\ln x=(x\ln x)_1^{N}-\int_1^Nx\,\mathrm{d}(\ln x)=N\ln N-\int_1^N\mathrm{d}x=N(\ln N-1)+1\approx N(\ln N-1).
+    \end{align}
+    以上证明了 $\ln N!$ 的近似值，下面来讨论 $\ln N!$ 与其近似值之间的误差 $\ln N!-N(\ln N-1)$. 由于对 $\forall N\geq 4$，
+    \begin{gather}
+        \left(\frac{N+1}{N}\right)^{N+1}=\left(1+\frac{1}{N}\right)^{N+1}=\left(1+\frac{1}{N}\right)\left(1+\frac{1}{N}\right)^N\leq\left(1+\frac{1}{N}\right)e\leq N\\
+        \Longleftrightarrow(N+1)^{N+1}\leq N^{N+2}\\
+        \Longleftrightarrow(N+1)\ln(N+1)\leq(N+2)\ln N\\
+        \Longleftrightarrow(N+1)\ln(N+1)-N\leq(N+2)\ln N-N\\
+        \left[\text{利用}\ln N!=\sum_{n=1}^N\ln N\leq\int_1^{N+1}\mathrm{d}x\,\ln x=(N+1)\ln(N+1)-N\right]\\
+        \Longleftrightarrow\ln N!\leq(N+2)\ln N-N\\
+        \Longleftrightarrow\ln N!-N(\ln N-1)\leq 2\ln N,
+    \end{gather}
+    即对 $\forall N\geq 4$，存在 $M=2$，使得 $\ln N!-N(\ln N-1)\leq M\ln N$，即误差与 $\ln N$ 同阶.
+
+    综上，
+    \begin{align}
+        \ln N!=N(\ln N-1)+O(\ln N).
+    \end{align}
 \end{pf}
 
 \begin{prob}
