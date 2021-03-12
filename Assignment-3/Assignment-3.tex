@@ -45,13 +45,78 @@
     \]
     找到某一特定系统 $S'$ 处于 $\psi_j'$ 状态的几率是
     \[
-        P_j=\frac{1}{Q}e^{-\beta E_j'}
+        P_j'=\frac{1}{Q}e^{-\beta E_j'}
     \]
     ……\\
     其中 $Q=\sum_je^{-\beta E_j}$，$Q'=\sum_je^{-\beta E_j'}$，$\cdots$.
 \end{prob}
 \begin{pf}
-
+    整个系综的 Hamiltonian 为
+    \begin{align}
+        \mathcal{H}=\sum_{a=1}^MH_a+\sum_{a=1}^{M'}H_a'.
+    \end{align}
+    整个系综的波函数为
+    \begin{align}
+        \Psi=\prod_{a=1}^M\psi^{(a)}\prod_{a=1}^{M'}\psi^{'(a)}
+    \end{align}
+    其中 $\psi^{(j)}$ 为系综中第 $j$ 个 $S$ 系统的本征态，$\psi^{'(j)}$ 为系综中第 $j$ 个 $S'$ 系统的本征态.
+    假设系综内系统按能量的分布为 $\{M_j,M_j'\}$，其中 $M_j$ 为处于 $H$ 的本征态 $j$ 的系统数目，$M_j'$ 为处于 $H'$ 的本征态 $j'$ 的系统数目，则系综内 $S$ 系统的总数可表为
+    \begin{align}
+        \sum_jM_j=&M,\\
+        \sum_jM_j'=&M'.
+    \end{align}
+    系综的总能量可表为
+    \begin{align}
+        \sum_jM_jE_j+\sum_jM_j'E_j'=\varepsilon.
+    \end{align}
+    对应于分布 $\{M_j,M_j'\}$ 的系综状态数为
+    \begin{align}
+        \Omega(\{M_j,M_j'\})=\frac{M!}{\prod_jM_j!}\frac{M'!}{\prod_jM_j'!}.
+    \end{align}
+    对应于不限定 $S'$ 系统分布，而 $S'$ 系统分布为 $\{M_j\}$ 的系综的状态数为
+    \begin{align}
+        \Omega(\{M_j\})=\sum_{\{M_j'\}}\Omega(\{M_j,M_j'\}).
+    \end{align}
+    对应于不限定 $S'$ 系统分布，而 $S'$ 系统分布为 $\{M_j\}$ 的系综的状态数为
+    \begin{align}
+        \Omega(\{M_j'\})=\sum_{\{M_j\}}\Omega(\{M_j,M_j'\}).
+    \end{align}
+    给定 $M$, $M'$ 和 $\epsilon$ 下系综状态总数为
+    \begin{align}
+        \Omega=\sum_{\{M_j,M_j'\}}\Omega(\{M_j,M_j'\}).
+    \end{align}
+    求 $\Omega(\{M_j,M_j'\})$ 关于 $\{M_j,M_j'\}$ 在固定 $M$, $M'$, $\varepsilon$ 条件下的最大值：
+    \begin{align}
+        \label{2-parital/partialMj}
+        \frac{\partial}{\partial M_j}\left[\ln\Omega(\{M_j,M_j'\})-\alpha_1\sum_jM_j-\alpha_2\sum_jM_j'-\beta\left(\sum_jM_jE_j+\sum_jM_j'E_j'\right)\right]=&0,\\
+        \label{2-partial/partialMj'}
+        \frac{\partial}{\partial M_j'}\left[\ln\Omega(\{M_j,M_j'\})-\alpha_1\sum_jM_j-\alpha_2\sum_jM_j'-\beta\left(\sum_jM_jE_j+\sum_jM_j'E_j'\right)\right]=&0,
+    \end{align}
+    其中 $\alpha$ 和 $\beta$ 为 Lagrangian 不定乘子.
+    当 $M\rightarrow\infty$ 时，$M_j\rightarrow\infty$，利用 Sterling 公式，有
+    \begin{align}
+        \ln\Omega(\{M_j\})\approx&M(\ln M-1)-\sum_jM_j(\ln M_j-1)+M'(\ln M'-1)-\sum_jM_j'(\ln M_j'-1).
+    \end{align}
+    上两式分别代入式 \eqref{2-parital/partialMj} 和 \eqref{2-partial/partialMj'}，得
+    \begin{align}
+        -\ln M_j-\alpha_1-\beta E_j=&0,\\
+        -\ln M_j'-\alpha_2-\beta E_j'=&0.
+    \end{align}
+    故该系综的最可几分布为
+    \begin{align}
+        M_j=&e^{-\alpha_1-\beta E_j},\\
+        M_j'=&e^{-\alpha_2-\beta E_j'}
+    \end{align}
+    找到某一特定系统 $S$ 处于 $\psi_j$ 状态的几率约等于最可几分布内系统处于本征态 $\psi_j$ 的几率
+    \begin{align}
+        P_j=\frac{M_j}{M}=\frac{e^{-\alpha_1-\beta E_j}}{\sum_je^{-\alpha_1-\beta E_j}}=\frac{1}{Q}e^{-\beta E_j},
+    \end{align}
+    其中 $Q=\sum_je^{-\beta E_j}$.
+    找到某一特定系统 $S'$ 处于 $\psi_j'$ 状态的几率约等于最可几分布内系统处于本征态 $\psi_j'$ 的几率
+    \begin{align}
+        P_j'=\frac{M_j'}{M}=\frac{e^{-\alpha_2-\beta E_j}}{\sum_je^{-\alpha_2-\beta E_j'}}=\frac{1}{Q'}e^{-\beta E_j'},
+    \end{align}
+    其中 $Q'=\sum_je^{-\beta E_j'}$.
 \end{pf}
 
 \begin{prob}
