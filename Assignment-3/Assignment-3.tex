@@ -120,13 +120,63 @@
 \end{pf}
 
 \begin{prob}
-    证明局正则系综的最可几分布内粒子数的涨落为
+    证明巨正则系综的最可几分布内粒子数的涨落为
     \[
         \frac{\Delta N}{\langle N\rangle}=\sqrt{\frac{kT\rho\kappa_T}{\langle N\rangle}}
     \]
     其中 $\rho=\langle N\rangle/V$ 为密度，$\Delta N^2=(N-\langle N\rangle)^2$ 的平均值（均方偏差），$\kappa_T$ 为等温压缩系数. 由此可见 $\kappa_T>0$.
 \end{prob}
 \begin{pf}
-    
+    巨正则系综的最可几分布的平均粒子数为
+    \begin{align}
+        \langle N\rangle=\sum_N\sum_{j(N)}P_{j(N)}N=\frac{\sum_N\sum_{j(N)}Ne^{-\beta E_{j(N)-\gamma N}}}{\sum_N\sum_{j(N)}e^{-\beta E_{j(N)}-\gamma N}}.
+    \end{align}
+    注意到
+    \begin{align}
+        \frac{\partial\langle N\rangle}{\partial\gamma}=&\frac{\partial}{\partial\gamma}\left(\frac{\sum_N\sum_{j(N)}Ne^{-\beta E_{j(N)}-\gamma N}}{\sum_N\sum_{j(N)}e^{-\beta E_{j(N)}-\gamma N}}\right)\\
+        =&-\frac{\sum_N\sum_{j(N)}N^2e^{-\beta E_{j(N)}-\gamma N}}{\sum_N\sum_{j(N)}e^{-\beta E_{j(N)}-\gamma N}}+\frac{\left(\sum_N\sum_{j(N)}Ne^{-\beta E_{j(N)}-\gamma N}\right)}{\left(\sum_N\sum_{j(N)}e^{-\beta E_{j(N)}-\gamma N}\right)}\\
+        =&-\langle N^2\rangle+\langle N\rangle^2.
+    \end{align}
+    巨正则系综的最可几分布内粒子数的均方偏差
+    \begin{align}
+        (\Delta N)^2=\langle(N-\langle N\rangle)^2\rangle=\langle N^2\rangle-\langle N\rangle^2=-\frac{\partial\langle N\rangle}{\partial\gamma}.
+    \end{align}
+    由于
+    \begin{align}
+        \gamma=-\frac{\mu}{kT},
+    \end{align}
+    故有
+    \begin{align}
+        (\Delta N)^2=-\frac{\partial\langle N\rangle}{\partial\gamma}=kT\left(\frac{\partial\langle N\rangle}{\partial\mu}\right)_{T,V}.
+    \end{align}
+    巨正则系综的最可几分布内粒子数的涨落为
+    \begin{align}
+        \label{3-Nfluctuation}
+        \frac{\Delta N}{\langle N\rangle}=\sqrt{\frac{kT}{\langle N\rangle^2}\left(\frac{\partial\langle N\rangle}{\partial\mu}\right)_{T,V}}.
+    \end{align}
+    由于 Gibbs 势的全微分为
+    \begin{align}
+        \notag\mathrm{d}G=&-S\,\mathrm{d}T+V\,\mathrm{d}P+\mu\,\mathrm{d}N=-(\langle N\rangle s)\,\mathrm{d}T+(\langle N\rangle v)\,\mathrm{d}P+\mu\,\mathrm{d}\langle N\rangle\\
+        =&\mathrm{d}(\langle N\rangle\mu)=\langle N\rangle\,\mathrm{d}\mu+\mu\,\mathrm{d}(\langle N\rangle),
+    \end{align}
+    其中 $s=\frac{S}{\langle N\rangle}$, $v=\frac{V}{\langle N\rangle}$ 分别是单粒子对应的熵和体积,
+    化学势的全微分为
+    \begin{align}
+        \mathrm{d}\mu=v\,\mathrm{d}p-s\,\mathrm{d}T.
+    \end{align}
+    由上式得，
+    \begin{align}
+        \left(\frac{\partial\mu}{\partial v}\right)_T=v\left(\frac{\partial p}{\partial v}\right)_T.
+    \end{align}
+    同时由于 $v=\frac{V}{\langle N\rangle}$，在保持 $V$ 不变而 $\langle N\rangle$ 发生变化的情况下，上式可表为
+    \begin{gather}
+        \frac{\partial\langle N\rangle}{\partial v}\left(\frac{\partial\mu}{\partial\langle N\rangle}\right)_{T,V}=\left(\frac{\partial v}{\partial\langle N\rangle}\right)^{-1}\left(\frac{\partial\mu}{\partial\langle N\rangle}\right)=-\frac{\langle N\rangle^2}{V}\left(\frac{\partial\mu}{\partial\langle N\rangle}\right)_{T,V}=v\left(\frac{\partial p}{\partial v}\right)_T,\\
+        \Longrightarrow\frac{1}{\langle N\rangle^2}\left(\frac{\partial\langle N\rangle}{\partial\mu}\right)_{T,V}=\frac{1}{V}\frac{1}{v}\left(\frac{\partial v}{\partial p}\right)_T.
+    \end{gather}
+    上式代入式 \eqref{3-Nfluctuation} 得
+    \begin{align}
+        \frac{\Delta N}{\langle N\rangle}=\sqrt{kT\frac{1}{V}\frac{1}{v}\left(\frac{\partial v}{\partial p}\right)_T}=\sqrt{kT\frac{\rho}{\langle N\rangle}\kappa_T},
+    \end{align}
+    其中 $\rho=\frac{\langle N\rangle}{V}$ 为粒子数密度，$\kappa_T=\frac{1}{v}\left(\frac{v}{p}\right)_T$ 为等温压缩系数.
 \end{pf}
 \end{document}
