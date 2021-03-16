@@ -55,13 +55,125 @@
     证明非相对论简并电子气体的热力学函数是
     \begin{gather*}
         G=N\mu=N\varepsilon_F\left[1-\frac{1}{12}\pi^2\left(\frac{kT}{\varepsilon_F}\right)^2-\frac{1}{80}\pi^4\left(\frac{kT}{\varepsilon_F}\right)^4+\cdots\right]\\
-        E=\frac{3}{5}N\varepsilon_F\left[1+\frac{5}{12}\pi^2\left(\frac{kT}{\varepsilon_F}\right)^2-\frac{1}{16}\pi^4\left(\frac{kT}{\varepsilon_F}\right)+\cdots\right]\\
+        E=\frac{3}{5}N\varepsilon_F\left[1+\frac{5}{12}\pi^2\left(\frac{kT}{\varepsilon_F}\right)^2-\frac{1}{16}\pi^4\left(\frac{kT}{\varepsilon_F}\right)^4+\cdots\right]\\
         C_V=\frac{1}{2}N\pi^2\frac{k^2T}{\varepsilon_F}\left[1-\frac{3}{10}\pi^2\left(\frac{kT}{\varepsilon_F}\right)^2+\cdots\right]\\
         S=\frac{1}{2}N\pi^2\frac{k^2T}{\varepsilon_F}\left[1-\frac{1}{10}\left(\frac{kT}{\varepsilon_F}\right)^2+\cdots\right]
     \end{gather*}
     其中 $N=\frac{V}{3\pi^2}\left(\frac{2m}{\hbar}\varepsilon_F\right)^{\frac{2}{3}}$ 为电子总数，$\cdots$ 代表 $\frac{kT}{\varepsilon_F}$ 的高阶项.
 \end{prob}
 \begin{pf}
-    
+    ~\\\fbox{\parbox{\columnwidth}{Sommerfeld 方法：
+    \begin{align}
+        \int_0^{\infty}\mathrm{d}\varepsilon\frac{f(\varepsilon)}{e^{\beta(\varepsilon-\mu)}+1}\approx 2\sum_{n=0}^{\infty}F^{(2n)}c_n(kT)^{2n},
+    \end{align}
+    其中 $F(\varepsilon)$ 为 $f(\varepsilon)$ 的原函数，
+    \begin{align}
+        c_n=\frac{1}{(2n)!}\int_0^{\infty}\frac{\xi^{2n}e^{\xi}}{(e^{\xi}+1)^2}.
+    \end{align}
+    $c_0=\frac{1}{2}$，$c_1=\frac{\pi^2}{12}$，$c_2=\frac{7\pi^2}{240}$.}}
+    系统中的电子数为
+    \begin{align}
+        N=V\int_0^{\infty}\mathrm{d}\varepsilon\frac{D(\varepsilon)}{e^{\beta(\varepsilon-\mu)}+1},
+    \end{align}
+    其中对于非相对论自由电子，态密度
+    \begin{align}
+        D(\varepsilon)=\frac{\sqrt{2}m^{3/2}\varepsilon^{1/2}}{\pi^2\hbar^3},
+    \end{align}
+    从而对于上面这一积分式，
+    \begin{gather}
+        f(\varepsilon)=D(\varepsilon),\\
+        \Longrightarrow F(\varepsilon)=\frac{2\sqrt{2}m^{3/2}\varepsilon^{3/2}}{3\pi^2\hbar^3},\\
+        F^{(2)}(\varepsilon)=D'(\varepsilon)=\frac{\sqrt{2}m^{3/2}\varepsilon^{-1/2}}{2\pi^2\hbar^3},\\
+        F^{(4)}(\varepsilon)=\frac{3\sqrt{2}m^{3/2}\varepsilon^{-5/2}}{8\pi^2\hbar^3}.
+    \end{gather}
+    从而利用 Sommerfeld 方法，得
+    \begin{align}
+        \label{2-N}
+        N=\frac{V}{3\pi^2}\left(\frac{2m\mu}{\hbar^2}\right)^{3/2}\left[1+\frac{\pi^2}{8}\left(\frac{kT}{\mu}\right)^2+\frac{7\pi^4}{640}\left(\frac{kT}{\mu}\right)^4+\cdots\right],\\
+        \Longrightarrow\rho=\frac{N}{V}=\frac{1}{3\pi^2}\left(\frac{2m\mu}{\hbar^2}\right)^{3/2}\left[1+\frac{\pi^2}{8}\left(\frac{kT}{\mu}\right)^2+\frac{7\pi^4}{640}\left(\frac{kT}{\mu}\right)^4+\cdots\right].
+    \end{align}
+    由于
+    \begin{align}
+        \rho=\frac{\omega K_F^3}{6\pi^2}\overset{\omega=2}{=}\frac{K_F^3}{3\pi^2}=\frac{(2m\varepsilon_F/\hbar^2)^{3/2}}{3\pi^2},
+    \end{align}
+    故有
+    \begin{align}
+        \varepsilon_F^{3/2}=\mu^{3/2}\left[1+\frac{\pi^2}{8}\left(\frac{kT}{\mu}\right)^2+\frac{7\pi^4}{640}\left(\frac{kT}{\mu}\right)^4+\cdots\right],
+    \end{align}
+    \begin{align}
+        \notag\Longrightarrow\varepsilon_F=&\mu\left[1+\frac{\pi^2}{8}\left(\frac{kT}{\mu}\right)^2+\frac{7\pi^4}{640}\left(\frac{kT}{\mu}\right)^4+\cdots\right]^{2/3}\\
+        \notag=&\mu\left\{1+\frac{2}{3}\left[\frac{\pi^2}{8}\left(\frac{kT}{\mu}\right)^2+\frac{7\pi^4}{640}\left(\frac{kT}{\mu}\right)^4+\cdots\right]+\frac{1}{2!}\frac{-1}{3}\frac{2}{3}\left[\frac{\pi^2}{8}\left(\frac{kT}{\mu}\right)^2+\frac{7\pi^4}{640}\left(\frac{kT}{\mu}\right)^4+\cdots\right]^2+\cdots\right\}\\
+        =&\mu\left[1+\frac{\pi^2}{12}\left(\frac{kT}{\mu}\right)^2+\frac{\pi^4}{180}\left(\frac{kT}{\mu}\right)^4+\cdots\right],
+    \end{align}
+    \begin{align}
+        \notag\Longrightarrow\mu=&\varepsilon_F\left[1+\frac{\pi^2}{12}\left(\frac{kT}{\mu}\right)^2+\frac{\pi^4}{180}\left(\frac{kT}{\mu}\right)^4+\cdots\right]^{-1}.
+    \end{align}
+    近似到 $0$ 阶得
+    \begin{align}
+        \mu=\varepsilon_F.
+    \end{align}
+    将上式回代，然后近似到 $2$ 阶得
+    \begin{align}
+        \mu=\varepsilon_F-\frac{\pi^2}{12\varepsilon_F}(kT)^2.
+    \end{align}
+    将上式回代，然后近似到 $4$ 阶得
+    \begin{align}
+        \label{2-mu}
+        \mu=\varepsilon_F-\frac{\pi^2}{12\varepsilon_F\left[1-\frac{\pi^2}{12}\left(\frac{kT}{\varepsilon_F}\right)^2\right]}(kT)^2-\frac{\pi^4}{180\varepsilon_F^4}(kT)^4\approx\varepsilon_F-\frac{\pi^2}{12\varepsilon_F}(kT)^2-\frac{1}{80\varepsilon_F^3}(kT)^4.
+    \end{align}
+    故 Gibbs 势为
+    \begin{align}
+        G=N\mu=N\varepsilon\left[1-\frac{1}{12}\pi^2\left(\frac{kT}{\varepsilon_F}\right)^2-\frac{1}{80}\pi^4\left(\frac{kT}{\varepsilon_F}\right)^4+\cdots\right].
+    \end{align}
+    系统内能为
+    \begin{align}
+        E=V\int_0^{\infty}\mathrm{d}\varepsilon\frac{D(\varepsilon)}{e^{-\beta(\varepsilon-\mu)}+1}\varepsilon.
+    \end{align}
+    从而对上面这一积分式，
+    \begin{gather}
+        f(\varepsilon)=\varepsilon D(\varepsilon)=\frac{\sqrt{2}m^{3/2}\varepsilon^{3/2}}{\pi^2\hbar^3},\\
+        \Longrightarrow F(\varepsilon)=\frac{2\sqrt{2}m^{3/2}\varepsilon^{5/2}}{5\pi^2\hbar^3},\\
+        F^{(2)}(\varepsilon)=\frac{3\sqrt{2}m^{3/2}\varepsilon^{1/2}}{2\pi^2\hbar^3},\\
+        F^{(4)}(\varepsilon)=-\frac{3\sqrt{2}m^{3/2}\varepsilon^{-3/2}}{8\pi^2\hbar^3}.
+    \end{gather}
+    从而利用 Sommerfeld 方法，得
+    \begin{align}
+        \label{2-E}
+        E=V\left(\frac{2m\mu}{\hbar^2}\right)^{3/2}\frac{1}{5\pi^2}\mu\left[1+\frac{5\pi^2}{8}\left(\frac{kT}{\mu}\right)^2-\frac{7\pi^4}{384}\left(\frac{kT}{\mu}\right)^4+\cdots\right].
+    \end{align}
+    根据式 \eqref{2-N}，
+    \begin{align}
+        \notag V\left(\frac{2m\mu}{\hbar^2}\right)^{3/2}=&3\pi^2N\left[1+\frac{\pi^2}{8}\left(\frac{kT}{\mu}\right)^2+\frac{7\pi^2}{640}\left(\frac{kT}{\mu}\right)^4+\cdots\right]^{-1}\\
+        \notag=&3\pi^2N\left\{1-\left[\frac{\pi^2}{8}\left(\frac{kT}{\mu}\right)^2+\frac{7\pi^2}{640}\left(\frac{kT}{\mu}\right)^4\right]+\frac{1}{2!}(-1)(-2)\left[\frac{\pi^2}{8}\left(\frac{kT}{\mu}\right)^2+\frac{7\pi^2}{640}\left(\frac{kT}{\mu}\right)^4+\cdots\right]^2+\cdots\right\}\\
+        =&3\pi^2N\left[1-\frac{\pi^2}{8}\left(\frac{kT}{\mu}\right)^2+\frac{3\pi^2}{640}\left(\frac{kT}{\mu}\right)^4+\cdots\right].
+    \end{align}
+    将上式代入式 \eqref{2-E}，得
+    \begin{align}
+        \notag E=&\frac{3}{5}N\mu\left[1+\frac{5\pi^2}{8}\left(\frac{kT}{\mu}\right)^2-\frac{7\pi^4}{384}\left(\frac{kT}{\mu}\right)^4+\cdots\right]\left[1-\frac{\pi^2}{8}\left(\frac{kT}{\mu}\right)^2+\frac{3\pi^2}{640}\left(\frac{kT}{\mu}\right)^4+\cdots\right]\\
+        \notag=&\frac{3}{5}N\mu\left[1+\frac{\pi^2}{2}\left(\frac{kT}{\mu}\right)^2-\frac{19\pi^4}{384}\left(\frac{kT}{\mu}\right)^4+\cdots\right]\\
+        =&\frac{3}{5}N\left[\mu+\frac{\pi^2}{2\mu}(kT)^2-\frac{11\pi^4}{120\mu^3}(kT)^4+\cdots\right].
+    \end{align}
+    将式 \eqref{2-mu} 代入上式，并近似至 $4$ 阶，得
+    \begin{align}
+        \notag E=&\frac{3}{5}N\left\{\varepsilon_F\left[1-\frac{\pi^2}{12}\left(\frac{kT}{\varepsilon_F}\right)^2-\frac{\pi^4}{80}\left(\frac{kT}{\varepsilon_F}\right)^4\right]+\frac{\pi^2}{2\varepsilon_F\left[1-\frac{\pi^2}{12}\left(\frac{kT}{\varepsilon_F}\right)^2-\cdots\right]}(kT)^2-\frac{11\pi^4}{120\varepsilon_F^3[1-\cdots]^3}(kT)^4\right\}\\
+        \notag=&\frac{3}{5}N\left[\varepsilon_F+\frac{5\pi^2}{12\varepsilon_F}(kT)^2-\frac{\pi^4}{16\varepsilon_F^3}(kT)^4+\cdots\right]\\
+        =&\frac{3}{5}N\varepsilon_F\left[1+\frac{5\pi^2}{12}\left(\frac{kT}{\varepsilon_F}\right)^2-\frac{\pi^4}{16}\left(\frac{kT}{\varepsilon_F}\right)^4+\cdots\right].
+    \end{align}
+    系统的定容热容量为
+    \begin{align}
+        C_V=\left(\frac{\partial E}{\partial T}\right)_V=\frac{1}{2}N\pi^2\frac{k^2T}{\varepsilon_F}\left[1-\frac{3}{10}\left(\frac{kT}{\varepsilon_F}\right)^2+\cdots\right]
+    \end{align}
+    对于非相对论电子气体，
+    \begin{align}
+        PV=\frac{2}{3}E.
+    \end{align}
+    系统的自由能为
+    \begin{align}
+        F=G-PV=G-\frac{2}{3}E=N\varepsilon_F\left[\frac{3}{5}-\frac{\pi^2}{4}\left(\frac{kT}{\varepsilon_F}\right)^2+\frac{\pi^4}{80}\left(\frac{kT}{\varepsilon_F}\right)^4+\cdots\right].
+    \end{align}
+    系统的熵为
+    \begin{align}
+        S=-\frac{\partial G}{\partial T}=\frac{\pi^2}{2}N\frac{k^2T}{\varepsilon_F}\left[1-\frac{1}{10}\left(\frac{kT}{\varepsilon_F}\right)^2+\cdots\right].
+    \end{align}
 \end{pf}
 \end{document}
