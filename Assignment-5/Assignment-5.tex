@@ -60,7 +60,33 @@
     \end{itemize}
 \end{prob}
 \begin{sol}
-    
+    \begin{itemize}
+        \item[1)] 两维自旋为零的自由 Boson 系统中的单个粒子的能量可表为
+        \begin{align}
+            \varepsilon=\frac{\hbar^2K^2}{2m}.
+        \end{align}
+        对所有状态的求和可表为
+        \begin{align}
+            A\int\frac{\mathrm{d}^2\vec{K}}{(2\pi)^2}=\frac{A}{(2\pi)^2}\int_0^{2\pi}\mathrm{d}\theta\int_0^{\infty}K\,\mathrm{d}K=\frac{A}{2\pi}\int_0^{\infty}\frac{\sqrt{2m\varepsilon}}{\hbar}\mathrm{d}\left(\frac{\sqrt{2m\varepsilon}}{\hbar}\right)=\frac{Am}{2\pi\hbar^2}\int_0^{\infty}\mathrm{d}\varepsilon=A\int_0^{\infty}D(\varepsilon)\,\mathrm{d}\varepsilon,
+        \end{align}
+        其中 $A$ 为系统的面积，
+        从而得到态密度
+        \begin{align}
+            D(\varepsilon)=\frac{m}{2\pi\hbar^2}.
+        \end{align}
+        \item[2)] 粒子数面密度为
+        \begin{align}
+            \notag\rho=&\int_0^{\infty}\frac{D(\varepsilon)}{e^{\beta(\varepsilon-\mu)}-1}\,\mathrm{d}\varepsilon=\frac{m}{2\pi\hbar^2}\int_0^{\infty}\mathrm{d}\varepsilon\frac{ze^{-\beta\varepsilon}}{1-ze^{-\beta\varepsilon}}\\
+            \notag&(\text{令 }x=\beta\varepsilon=\frac{\varepsilon}{kT})\\
+            \notag=&\frac{mkT}{2\pi\hbar^2}\int_0^{\infty}\frac{ze^{-x}}{1-ze^{-x}}=\frac{mkT}{2\pi\hbar^2}\left.\ln(1-ze^{-x})\right\rvert_0^{\infty}=\frac{mkT}{2\pi\hbar^2}\ln\frac{1}{1-z}=\frac{1}{\lambda^2}\ln\frac{1}{1-z}.
+        \end{align}
+        其中 $\lambda=\sqrt{\frac{2\pi}{mkT}}\hbar$.
+        \item[3)] 对于玻色子，$\mu\leq 0\Longrightarrow 0\leq z=e^{\beta\mu}\leq 1\Longrightarrow$对任意温度和粒子数密度，均存在
+        \begin{align}
+            z=1-e^{-\rho z^2},
+        \end{align}
+        即，以上模型对任意温度和粒子数密度均成立，而不存在温度的下限或粒子数密度的上限，故该系统无凝聚现象.
+    \end{itemize}
 \end{sol}
 
 \begin{prob}
