@@ -98,6 +98,54 @@
     其中上边的符号对应于 Fermions，下边的符号对应于 Bosons，$\lambda$ 为热波长，$\cdots$ 代表 $\rho\lambda^3$ 的更高阶项.
 \end{prob}
 \begin{pf}
-    
+    自旋为 $j$ 的非相对论自由量子气体压强与体积之积为
+    \begin{align}
+        \label{3-P/kT}
+        \frac{P}{kT}=\frac{2j+1}{\lambda^3}\left(z\mp\frac{z^2}{2^{5/2}}+\cdots\right).
+    \end{align}
+    其中上面的符号对应于费米子，下面的符号对应于玻色子，下同.
+    粒子数密度为
+    \begin{align}
+        \label{3-rho}
+        \rho=\frac{N}{V}=\frac{2j+1}{\lambda^3}\left(z\mp\frac{z^2}{2^{3/2}}+\cdots\right).
+    \end{align}
+    故
+    \begin{align}
+        z=\frac{\rho\lambda^3}{2j+1}\pm\frac{1}{2^{3/2}}\left(\frac{\rho\lambda^3}{2j+1}\right)^2+\cdots
+    \end{align}
+    将上式代入压强与体积之积的表达式可得
+    \begin{align}
+        PV=NkT\left[1\pm \frac{\rho\lambda^3}{2^{5/2}(2j+1)}+\cdots\right].
+    \end{align}
+    系统的吉布斯势可表为
+    \begin{align}
+        G=N\mu=U+PV-TS,
+    \end{align}
+    其中系统的粒子数 $N$ 和总能量（内能） $U$ 是确定的，故单位体积的熵密度
+    \begin{align}
+        s=\frac{S}{V}=\left(\frac{\partial P}{T}\right)_{\mu}.
+    \end{align}
+    从前面式 \eqref{3-P/kT} 中可见，$P$ 为 $T$ 和 $z$ 的函数（注意 $\lambda=\sqrt{\frac{2\pi}{mkT}}\hbar$，故实际上 $P\propto\frac{5}{2}T$），而 $z=e^{\mu/kT}$ 又为 $T$ 的函数，故
+    \begin{align}
+        s=\left(\frac{\partial P}{\partial T}\right)_{\mu,z}+\left(\frac{\partial P}{\partial z}\right)_{\mu,T}\left(\frac{\partial z}{\partial T}\right)_{\mu},
+    \end{align}
+    其中
+    \begin{align}
+        \left(\frac{\partial P}{\partial T}\right)_{\mu,z}=&\frac{5}{2}\frac{P}{T},\\
+        \left(\frac{\partial P}{\partial z}\right)_{\mu,T}=&\frac{kT}{V}\left(\frac{\partial\ln\mathcal{Q}}{\partial z}\right)=\frac{kT}{zV}\left(z\frac{\partial}{\partial z}\ln\mathcal{Q}\right)=\frac{kT\rho}{z},\\
+        \left(\frac{\partial z}{\partial T}\right)_{\mu}=&\left(\frac{\partial e^{\mu/kT}}{\partial T}\right)_{\mu}=-\frac{\mu}{kT^2}e^{\mu/kT}=-\frac{\mu}{kT^2}z,\\
+        \notag\mu=&kT\ln z=kT\ln\left[\frac{\rho\lambda^3}{2j+1}\pm\frac{1}{2^{3/2}}\left(\frac{\rho\lambda^3}{2j+1}\right)^2+\cdots\right]=kT\left[\ln\frac{\rho\lambda^3}{2j+1}+\ln\left(1\pm\frac{\rho\lambda^3}{2^{3/2}(2j+1)}\right)\right]\\
+        &\approx kT\left[\ln\frac{\rho\lambda^3}{2j+1}\pm\frac{\rho\lambda^3}{2^{3/2}(2j+1)}\right]
+    \end{align}
+    从而
+    \begin{align}
+        \notag s=&\frac{5}{2}\frac{P}{T}-\frac{kT\rho}{z}\frac{\mu}{kT^2}z=\frac{5}{2}\frac{Nk}{V}\left(1\pm\frac{1}{2^{5/2}}\frac{\rho\lambda^3}{2j+1}+\cdots\right)-\frac{\rho\mu}{T}\\
+        \notag=&\frac{5}{2}\frac{Nk}{V}\left(1\pm\frac{1}{2^{5/2}}\frac{\rho\lambda^3}{2j+1}+\cdots\right)-\frac{Nk}{V}\left[\ln\frac{\rho\lambda^3}{2j+1}\pm\frac{\rho\lambda^3}{2^{3/2}(2j+1)}\right]\\
+        =&k\rho\left[\ln\frac{(2j+1)e^{5/2}}{\rho\lambda^2}\pm\frac{\rho\lambda^3}{2^{7/2}(2j+1)}+\cdots\right].
+    \end{align}
+    系统的熵为
+    \begin{align}
+        S=sV=Nk\ln\frac{(2j+1)e^{5/2}}{\rho\lambda^3}\pm Nk\frac{\rho\lambda^3}{2^{7/2}(2j+1)}+\cdots.
+    \end{align}
 \end{pf}
 \end{document}
