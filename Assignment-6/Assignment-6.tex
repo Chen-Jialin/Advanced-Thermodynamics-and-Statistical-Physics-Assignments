@@ -10,7 +10,58 @@
     将结果用绝对温度和分子质量表达，并算出氢气和氧气以上各量在室温下的数值.
 \end{prob}
 \begin{sol}
-    
+    麦克斯韦速度分布律为
+    \begin{align}
+        f(v)=\left(\frac{m}{2\pi kT}\right)^{3/2}4\pi v^2e^{-\frac{mv^2}{2kT}}.
+    \end{align}
+    令上式的导数等于零，
+    \begin{align}
+        f'(v_0)=\left(\frac{m}{2\pi kT}\right)^{3/2}4\pi v_0e^{-\frac{mv_0^2}{2kT}}\left(2-\frac{mv_0^2}{kT}\right)=0,
+    \end{align}
+    得最可几速度为
+    \begin{align}
+        v_0=\sqrt{\frac{2kT}{m}}.
+    \end{align}
+    平均速度为
+    \begin{align}
+        \notag\langle v\rangle=&\int_0^{\infty}\mathrm{d}v\,vf(v)=\left(\frac{m}{2\pi kT}\right)^{3/2}4\pi\int_0^{\infty}\mathrm{d}v\,v^3e^{-\frac{mv^2}{2kT}}=\left(\frac{m}{2\pi kT}\right)^{3/2}4\pi\times\frac{2k^2T^2}{m^2}=\sqrt{\frac{8kT}{\pi m}}.
+    \end{align}
+    速度分布的宽度可表为
+    \begin{align}
+        \Delta v=\sqrt{\langle v^2\rangle-\langle v\rangle^2},
+    \end{align}
+    其中速率的平方平均为
+    \begin{align}
+        \langle v^2\rangle=\int_0^{\infty}\mathrm{d}v\,v^2f(v)=\left(\frac{m}{2\pi kT}\right)^{3/2}4\pi\int_0^{\infty}\mathrm{d}v\,v^4e^{-\frac{mv^2}{2kT}}=\left(\frac{m}{2\pi kT}\right)^{3/2}4\pi\times\frac{3\sqrt{\pi}}{8\left(\frac{m}{2kT}\right)^{5/2}}=\frac{3kT}{m},
+    \end{align}
+    故速度分布的宽度为
+    \begin{align}
+        \Delta v=\sqrt{\left(3-\frac{8}{\pi}\right)\frac{kT}{m}}.
+    \end{align}
+    氢气分子的质量为 $\frac{2\times 10}{6.02\times 10^{23}}$ kg，在室温 $300$ K 下最可几速度为
+    \begin{align}
+        v_{0,\ce{H2}}=1.58\times 10^3\text{m}\cdot\text{s}^{-1}=1.58\text{km}\cdot\text{s}^{-1},
+    \end{align}
+    平均速度为
+    \begin{align}
+        \langle v_{\ce{H2}}\rangle=1.78\times 10^3\text{m}\cdot\text{s}^{-1}=1.78\text{km}\cdot\text{s}^{-1},
+    \end{align}
+    速度分布的宽度为
+    \begin{align}
+        \Delta v_{\ce{H2}}=752\text{m}\cdot\text{s}^{-1}.
+    \end{align}
+    氧气分子的质量为 $\frac{32\times 10^{-3}}{6.02\times 10^{23}}$ kg，在室温下最可几速度为
+    \begin{align}
+        v_{0,\ce{O2}}=395\text{m}\cdot\text{s}^{-1},
+    \end{align}
+    平均速度为
+    \begin{align}
+        \langle v_{\ce{O2}}\rangle=445\text{m}\cdot\text{s}^{-1},
+    \end{align}
+    速度分布的宽度为
+    \begin{align}
+        \Delta v_{\ce{O2}}=187\text{m}\cdot\text{s}^{-1}.
+    \end{align}
 \end{sol}
 
 \begin{prob}
