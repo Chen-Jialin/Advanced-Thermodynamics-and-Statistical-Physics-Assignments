@@ -41,7 +41,63 @@
     相比较. 其中线密度 $\rho=N/L$.
 \end{prob}
 \begin{sol}
-    
+    根据两原子的相互作用能量 $u_{ij}$ 的表达式，有
+    \begin{align}
+        f_{ij}=e^{-\beta u_{ij}}-1=\left\{\begin{array}{ll}
+            -1,&r\leq d\\
+            0,&r>d
+        \end{array}\right.
+    \end{align}
+    根据 Mayer 第一定理，
+    \begin{align}
+        \label{2-P/kT}
+        \frac{P}{kT}=&\sum_{l=1}^{\infty}b_ly^l=b_1y+b_2y^2+b_3y^3+O(y^4),\\
+        \label{2-rho}
+        \rho=&y\frac{\partial\left(\frac{P}{kT}\right)}{\partial y}=b_1y+2b_2y^2+3b_3y^3+O(y^4),
+    \end{align}
+    其中一维情况下
+    \begin{align}
+        b_l(V,T)=&\frac{1}{l!L}\int\prod_{i=1}^l\mathrm{d}x_i\,\sum_{\text{all $l$-clusters}}\left(\prod f_{ij}\right),\\
+        b_1(V,T)=&\frac{1}{L}\int\mathrm{d}x_1=1,\\
+        b_2(V,T)=&\frac{1}{2!L}\int\mathrm{d}x_1\mathrm{d}x_2\,f_{12}=\frac{1}{2!L}\int\mathrm{d}x_1\int_{-d}^d\mathrm{d}(x_1-x_2)\,f_{12}(x_1-x_2)=-d,\\
+        \notag b_3(V,T)=&\frac{1}{3!L}\int\mathrm{d}x_1\mathrm{d}x_2\mathrm{d}x_3\,(3f_{12}f_{13}+f_{21}f_{13}f_{23})\\
+        \notag=&\frac{1}{3!L}\int\mathrm{d}x_1\int_{-d}^d\mathrm{d}(x_1-x_2)\int_{-d}^d\mathrm{d}(x_1-x_3)\times\\
+        &(3f_{12}(x_1-x_2)f_{13}(x_1-x_3)+f_{21}(x_1-x_2)f_{13}(x_1-x_3)f_{23}((x_1-x_2)-(x_1-x_3)))=\frac{3d^2}{2},
+    \end{align}
+    % 故
+    % \begin{align}
+    %     \frac{P}{kT}=&y-dy^2+\frac{3d^2}{2}y^3+O(y^4),\\
+    %     \rho=&y-2dy^2+\frac{9d^2}{2}y^3+O(y^4).
+    % \end{align}
+    由式 \eqref{2-rho} 得
+    \begin{align}
+        \label{2-y}
+        y=\rho-2b_2y^2-3b_3y^3+O(y^4).
+    \end{align}
+    将上式代入式 \eqref{2-P/kT} 中得
+    \begin{align}
+        \label{2-P/kT-2}
+        \frac{P}{kT}=\rho-b_2y^2-2b_3y^3+O(y^4).
+    \end{align}
+    将式 \eqref{2-y} 代入式 \eqref{2-y} 并近似到 $2$ 阶得
+    \begin{align}
+        y=\rho-2b_2\rho^2+O(\rho^3).
+    \end{align}
+    将上式代入式 \eqref{2-P/kT-2} 中可得
+    \begin{align}
+        \notag\frac{P}{kT}=&\rho-b_2(\rho-2b_2\rho^2)^2-2b_3(\rho-2b_2\rho^2)^3+O(\rho^4)=\rho-b_2\rho^2+(4b_2^2-2b_3)\rho^3+O(\rho^4)\\
+        =&\rho\left[1-\frac{1}{2}\beta_1\rho-\frac{2}{3}\beta_2\rho^2+O(\rho^3)\right],
+    \end{align}
+    其中
+    \begin{align}
+        \beta_1=&2b_2=-2d,\\
+        \beta_2=&3(b_3-2b_2^2)=-\frac{3d^2}{2}.
+    \end{align}
+    由准确的状态方程出发，有
+    \begin{align}
+        \frac{P}{kT}=\frac{\rho}{1-\rho d}=\rho\left[1+\rho d+(\rho d)^2+O(\rho^3)\right]=\rho\left[1-\frac{1}{2}\beta_1\rho-\frac{2}{3}\beta_2\rho^2+O(\rho^3)\right].
+    \end{align}
+    其中的 virial 系数与前一种方法得到的 virial 系数相同.
 \end{sol}
 
 \begin{prob}
