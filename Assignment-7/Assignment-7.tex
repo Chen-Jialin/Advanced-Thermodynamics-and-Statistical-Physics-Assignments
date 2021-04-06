@@ -108,6 +108,56 @@
     试比较同一系统由 Van der Waals 方程给出的 $(\rho d^3)^2$ 的系数.
 \end{prob}
 \begin{pf}
+    直径为 $d$ 的硬球的三维经典气体的原子间相互作用能量为
+    \begin{align}
+        u_{ij}=\left\{\begin{array}{ll}
+            \infty,&r\leq d\\
+            0,&r>d
+        \end{array}\right.,
+    \end{align}
+    从而
+    \begin{align}
+        f_{ij}=e^{-\beta u_{ij}}-1=\left\{\begin{array}{ll}
+            -1,&r\leq d\\
+            0,&r>d
+        \end{array}\right.
+    \end{align}
+    利用 Mayer 第一定理对 $\frac{P}{kT}$ 按 $\rho$ 的幂级数展开，有
+    \begin{align}
+        \frac{P}{kT}=\rho\left[1-\frac{1}{2}\beta_2\rho-\frac{2}{3}\beta_2\rho^2+O(\rho^3)\right],
+    \end{align}
+    其中 virial 系数
+    \begin{align}
+        \beta_1=&2b_2,\\
+        \beta_2=&3(b_3-2b_2^2),
+    \end{align}
+    而
+    \begin{align}
+        b_2=&\frac{1}{2!V}\int\mathrm{d}^3\vec{r}_2\int\mathrm{d}^3r_1\,f_{12}(\abs{\vec{r}_1-\vec{r}_2})=2\pi\int_0^d\mathrm{d}r_{12}\,r^2f_{12}(r_{12})=-\frac{2\pi d^3}{3},\\
+        \notag b_3=&\frac{1}{3!V}\int\mathrm{d}^3\vec{r}_3\int\mathrm{d}^3\vec{r}_2\int\mathrm{d}^3\vec{r}_1\,[3f_{12}(\vec{r}_1-\vec{r}_2)f_{13}(\abs{\vec{r}_1-\vec{r}_3})-f_{12}(\abs{\vec{r}_1-\vec{r}_2})f_{13}(\abs{\vec{r}_1-\vec{r}_3})f_{23}(\abs{\vec{r}_2-\vec{r}_3})]\\
+        \notag=&8\pi^2\int_0^d\mathrm{d}r_{12}\,r_{12}^2f(r_{12})\int_0^d\mathrm{d}r_{13}\,r_{13}^2f(r_{13})-\frac{1}{6}\int\mathrm{d}^3\vec{r}_{12}\int\mathrm{d}^3\vec{r}_{13}\,f_{12}(r_{12})f_{13}(r_{13})f_{23}(\abs{\vec{r}_{12}-\vec{r}_{13}})\\
+        =&\frac{8\pi^2d^6}{9}-\frac{1}{6}\int\mathrm{d}^3\vec{r}_{12}\int\mathrm{d}^3\vec{r}_{13}\,f_{12}(r_{12})f_{13}(r_{13})f_{23}(\abs{\vec{r}_{12}-\vec{r}_{13}}).
+    \end{align}
+    其中 $-\int\mathrm{d}^3\vec{r}_{13}f_{12}(r_{12})f_{13}(r_{13})f_{23}(\abs{\vec{r}_{12}-\vec{r}_{13}})$ 等价于两个直径 $d$，球心相距 $r_{12}$ 的球的重叠部分体积，即
+    \begin{align}
+        \notag-\int\mathrm{d}^3\vec{r}_{13}f_{12}(r_{12})f_{13}(r_{13})f_{23}(\abs{\vec{r}_{12}-\vec{r}_{13}})=&2\int_0^{d-\frac{r_{12}}{2}}\pi[d^2-(d-x)^2]\,\mathrm{d}x\\
+        =&\frac{\pi}{12}(16d^3-12d^2r_{12}+r_{12}^3).
+    \end{align}
+    从而
+    \begin{gather}
+        b_3=\frac{8\pi^2d^6}{9}+\frac{\pi^2}{18}\int_0^d\mathrm{d}r_{12}\,r_{12}^2(16d^3-12d^2r_{12}+r_{12}^3)=\frac{8\pi^2d^6}{9}+\frac{5\pi^2d^6}{36},\\
+        \Longrightarrow\frac{P}{kT}=\rho\left[1+\frac{2\pi}{3}\rho d^3+\frac{5}{18}\pi^2(\rho d^3)^2+O(\rho^3d^9)\right].
+    \end{gather}
 
+    由于将分子作为相互之间无吸引力的硬球处理，该系统的 Van der Waals 方程为
+    \begin{gather}
+        P(V-Nb)=NkT,\\
+        \Longrightarrow\frac{P}{kT}=\frac{N}{V-Nb}=\frac{\rho}{1-b\rho}=\rho+b\rho^2+b^2\rho^3+O(\rho^4),
+    \end{gather}
+    两种方式得到的 $(\rho d^3)^2$ 的系数均不依赖于温度.
+    比较得
+    \begin{align}
+        b=\frac{2\pi}{3}d^3.
+    \end{align}
 \end{pf}
 \end{document}
