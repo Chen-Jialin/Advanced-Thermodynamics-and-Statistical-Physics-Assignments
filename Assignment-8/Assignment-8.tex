@@ -10,7 +10,32 @@
     提示：考虑 $\omega_{t+\mathrm{d}t}-\omega_t$.
 \end{prob}
 \begin{pf}
-    
+    设系统的广义坐标为 $\{q_a\}$，广义动量为 $\{p_a\}$. 某组系统在时间 $t$ 占据的的相空间体积为
+    \begin{align}
+        \omega_t=\int\prod_a\mathrm{d}q_a\mathrm{d}p_a.
+    \end{align}
+    从时间 $t$ 到时间 $t+\mathrm{d}t$，发生如下演化：
+    \begin{align}
+        q_a'=&q_a+\dot{q}_a\mathrm{d}t\\
+        p_a'=&p_a+\dot{p}_a\mathrm{d}t.
+    \end{align}
+    该组系统在时间 $t+\mathrm{d}t$ 占据的相空间的体积为
+    \begin{align}
+        \omega_{t+\mathrm{d}t}=\int\prod_a\mathrm{d}q_a'\mathrm{d}p_a'=\int\prod_aJ\,\mathrm{d}q_a\mathrm{d}p_a,
+    \end{align}
+    其中雅可比行列式
+    \begin{align}
+        J=\abs{\frac{\partial(q_1',\cdots;p_1',\cdots)}{\partial(q_1,\cdots;p_1,\cdots)}}=\prod_a\left(1+\frac{\partial\dot{q}_a}{\partial q_a}\right)\left(1+\frac{\partial\dot{p}_a}{\partial p_a}\right)+O(t^2)=1+\sum_a\left(\frac{\partial\dot{q}_a}{\partial q_a}+\frac{\partial\dot{p}_a}{\partial p_a}\right)t+O(t^2).
+    \end{align}
+    将哈密顿方程代入上式得
+    \begin{align}
+        J=1+O(t^2).
+    \end{align}
+    从而
+    \begin{gather}
+        \omega_{t+\mathrm{d}t}=[1+O(t^2)]\omega_t,\\
+        \Longrightarrow\frac{\mathrm{d}\omega}{\mathrm{d}t}=\lim_{\mathrm{d}t\rightarrow 0}\frac{\omega_{t+\mathrm{d}t}-\omega_t}{\mathrm{d}t}=0.
+    \end{gather}
 \end{pf}
 
 \begin{prob}
