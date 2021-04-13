@@ -45,10 +45,56 @@
         \[
             P_n=\frac{1}{n!}(\rho v)^ne^{-\rho v}.
         \]
-        \item[(2)] 如果 $\rho=2.5\times 10^{19}\text{cm}^{-3}$，试估计当 $v=1\text{nm}^3$ 和 $v=1\text{cm}^3$ 时 $v$ 内无分子的几率.
+        \item[(2)] 如果 $\rho=2.5\times 10^{19}\text{ cm}^{-3}$，试估计当 $v=1\text{ nm}^3$ 和 $v=1\text{ cm}^3$ 时 $v$ 内无分子的几率.
     \end{itemize}
 \end{prob}
 \begin{sol}
-    
+    \begin{itemize}
+        \item[(1)] 某个分子在容器内一小体积 $v\ll V$ 内出现的几率为
+        \begin{align}
+            \frac{v}{V},
+        \end{align}
+        而不在这一小体积中出现的几率为
+        \begin{align}
+            1-\frac{v}{V}.
+        \end{align}
+        在容器内一小体积 $v\ll V$ 内出现 $n$ 个分子的几率为
+        \begin{align}
+            P_n=\left(\begin{matrix}
+                \rho V\\
+                n
+            \end{matrix}\right)\left(\frac{v}{V}\right)^n\left(1-\frac{v}{V}\right)^{\rho V-n}.
+        \end{align}
+        当 $\rho V\rightarrow\infty$ 时，
+        \begin{align}
+            P_n\approx\frac{\left(\begin{matrix}
+                \rho V\\
+                n
+            \end{matrix}\right)}{(\rho V)^n}\left(\rho v\right)^n\left(1-\frac{v}{V}\right)^{\rho v\frac{V}{v}}.
+        \end{align}
+        且在 $\rho V\rightarrow\infty$ 极限下，
+        \begin{align}
+            \frac{\left(\begin{matrix}
+                \rho V\\
+                n
+            \end{matrix}\right)}{(\rho V)^n}\rightarrow\frac{1}{n!},
+        \end{align}
+        且
+        \begin{align}
+            \left(1-\frac{v}{V}\right)^{\frac{V}{v}}\rightarrow e^{-1},
+        \end{align}
+        故
+        \begin{align}
+            P_n\approx\frac{1}{n!}(\rho v)^ne^{-\rho v}.
+        \end{align}
+        \item[(2)] 若 $\rho=2.5\times 10^{25}\text{ cm}^{-3}$，当 $v=1\text{ nm}^3$ 时，
+        \begin{align}
+            P_0=e^{-\rho v}=e^{-2.5\times 10^{16}}\approx 0.
+        \end{align}
+        当 $v=1\text{ cm}^3$ 时，
+        \begin{align}
+            P_0=e^{-\rho v}=e^{-2.5\times 10^{19}}\approx 0.
+        \end{align}
+    \end{itemize}
 \end{sol}
 \end{document}
