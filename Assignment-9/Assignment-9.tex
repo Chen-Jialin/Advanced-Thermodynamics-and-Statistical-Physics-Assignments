@@ -6,7 +6,79 @@
     一稀薄气体处于外力场内，相应的势能为 $V(\vec{r})$. 假设 $V(\vec{r})$ 在分子相互作用力程范围内的变化很小，求出 Boltzmann 方程的近似解并用平均数密度 $n$，平均动量 $\vec{p}_0$ 和 $\vec{p}_0=0$ 时的平均动能表示所得的解.
 \end{prob}
 \begin{sol}
-    
+    势能 $V(\vec{r})$ 分布下的外力场为
+    \begin{align}
+        \vec{F}=-\vec{\nabla}V(\vec{r}).
+    \end{align}
+    Boltzmann 方程
+    \begin{gather}
+        \notag\frac{\partial}{\partial t}f(\vec{r},\vec{p};t)+\left(\frac{\vec{p}}{m}\cdot\vec{\nabla}_{\vec{r}}+\vec{F}\cdot\vec{\nabla}_{\vec{p}}\right)f(\vec{r},\vec{p};t)\\
+        =\int\mathrm{d}^3\vec{p}_2\,\mathrm{d}^3\vec{p}_1'\,\mathrm{d}\vec{p}_2'\abs{T_{if}}^2\delta^4(P'-P)[f(\vec{r},\vec{p}_1';t)f(\vec{r},\vec{p}_2';t)-f(\vec{r},\vec{p};t)f(\vec{r},\vec{p}_2;t)]
+    \end{gather}
+    可化为
+    \begin{gather}
+        \notag\frac{\partial}{\partial t}f(\vec{r},\vec{p};t)+\left(\frac{\vec{p}}{m}\cdot\vec{\nabla}_{\vec{r}}-\vec{\nabla}_{\vec{p}}V(\vec{r})\cdot\vec{\nabla}_{\vec{p}}\right)f(\vec{r},\vec{p};t)\\
+        =\int\mathrm{d}^3\vec{p}_2\,\mathrm{d}^3\vec{p}_1'\,\mathrm{d}\vec{p}_2'\abs{T_{if}}^2\delta^4(P'-P)[f(\vec{r},\vec{p}_1';t)f(\vec{r},\vec{p}_2';t)-f(\vec{r},\vec{p};t)f(\vec{r},\vec{p}_2;t)]
+    \end{gather}
+    设 Boltzmann 方程的试探解为
+    \begin{align}
+        f(\vec{r},\vec{p};t)=C_1\rho(\vec{r},t)e^{-A(\vec{p}-\vec{p}_0)^2},
+    \end{align}
+    其中 $A$ 和 $C$ 为待定常数.
+    坐标空间的粒子数密度可表为
+    \begin{gather}
+        \rho(\vec{r})=C_1\rho(\vec{r},t)\int\mathrm{d}^3\vec{p}\,e^{-A(\vec{p}-\vec{p}_0)^2}=C_1\rho(\vec{r},t)\left(\frac{\pi}{A}\right)^{3/2},\\
+        \Longrightarrow C_1=\left(\frac{A}{\pi}\right)^{3/2}.
+    \end{gather}
+    平均动量即为 $\vec{p}_0$：
+    \begin{align}
+        \langle\vec{p}\rangle=\frac{\int\mathrm{d}^3\vec{p}\,\vec{p}f(\vec{r},\vec{p};t)}{\int\mathrm{d}\vec{p}\,f(\vec{r},\vec{p};t)}=\frac{\int\mathrm{d}^3\vec{p}\,\vec{p}e^{-A(\vec{p}-\vec{p}_0)^2}}{\int\mathrm{d}^3\vec{p}\,e^{-A(\vec{p}-\vec{p}_0)^2}}=\vec{p}_0.
+    \end{align}
+    $\vec{p}_0=0$ 时的平均动能可表为
+    \begin{gather}
+        \varepsilon=\left\langle\frac{p^2}{2m}\right\rangle=\frac{\int\mathrm{d}^3\vec{p}\,\frac{p^2}{2m}f(\vec{r},\vec{p};t)}{\int\mathrm{d}^3\vec{p}\,f(\vec{r},\vec{p};t)}=\frac{\int\mathrm{d}^3\vec{p}\,\frac{p^2}{2m}e^{-A\vec{p}^2}}{\int\mathrm{d}^3\vec{p}\,e^{-A\vec{p}^2}}=\frac{3}{4Am},\\
+        \Longrightarrow A=\frac{3}{4m\varepsilon}.
+    \end{gather}
+    故试探解可写为
+    \begin{align}
+        f(\vec{r},\vec{p};t)=\left(\frac{3}{4\pi m\varepsilon}\right)\rho(\vec{r},t)\exp\left[-\frac{3}{4m\varepsilon}(\vec{p}-\vec{p}_0)^2\right].
+    \end{align}
+    在这一试探解下，
+    \begin{align}
+        f(\vec{r},\vec{p}_1';t)f(\vec{r},\vec{p}_2';t)=f(\vec{r},\vec{p};t)f(\vec{r},\vec{p}_2;t),
+    \end{align}
+    故 Boltzmann 方程右侧等于零，从而
+    \begin{gather}
+        \frac{\partial}{\partial t}f(\vec{r},\vec{p};t)+\frac{\vec{p}}{m}\cdot\vec{\nabla}_{\vec{r}}f(\vec{r},\vec{p};t)-\nabla_{\vec{r}}V(\vec{r})\cdot\vec{\nabla}_{\vec{p}}f(\vec{r},\vec{p};t)=0,\\
+        \label{1}\Longrightarrow\frac{\partial}{\partial t}\rho(\vec{r},t)+\frac{\vec{p}}{m}\cdot\vec{\nabla}_{\vec{r}}\rho(\vec{r},t)-\vec{\nabla}_{\vec{r}}V(\vec{r})\cdot\left[-2A(\vec{p}-\vec{p}_0)\right]\rho(\vec{r},t)=0.
+    \end{gather}
+    当 $\vec{p}_0=0$ 时，可取
+    \begin{align}
+        \rho(\vec{r})=C_2e^{-2mAV(\vec{r})},
+    \end{align}
+    从而
+    \begin{align}
+        f(\vec{r},\vec{p};t)=\frac{3C_2}{4\pi m\varepsilon}\exp\left\{-\frac{3}{2\varepsilon}\left[\frac{(\vec{p}-\vec{p}_0)^2}{2m}+V(\vec{r})\right]\right\}.
+    \end{align}
+    其中 $C$ 为待定系数.
+    对于一般情况，$\vec{p}_0\neq 0$，需作变换
+    \begin{align}
+        \vec{p}\rightarrow\vec{p}-\vec{p}_0,\\
+        \vec{r}\rightarrow\vec{r}-\frac{1}{m}\vec{p}_0t
+    \end{align}
+    以保证式 \eqref{1} 仍然成立.
+    此时，
+    \begin{align}
+        \rho(\vec{r},t)=C_2\exp\left[-2mAV\left(\vec{r}-\frac{1}{m}\vec{p}_0t\right)\right],
+    \end{align}
+    从而
+    \begin{align}
+        f(\vec{r},\vec{p};t)=\frac{3C_2}{4\pi m\varepsilon}\exp\left\{-\frac{3}{2\varepsilon}\left[\frac{(\vec{p}-\vec{p}_0)^2}{2m}+V\left(\vec{r}-\frac{1}{m}\vec{p}_0t\right)\right]\right\}.
+    \end{align}
+    其中 $\varepsilon$ 为 $\vec{p}_0$ 时的平均动能，待定系数 $C_2$ 满足归一化条件
+    \begin{align}
+        \int\mathrm{d}^3\vec{r}\,\mathrm{d}\vec{p}\,f(\vec{r},\vec{p};t)=N.
+    \end{align}
 \end{sol}
 
 \begin{prob}
