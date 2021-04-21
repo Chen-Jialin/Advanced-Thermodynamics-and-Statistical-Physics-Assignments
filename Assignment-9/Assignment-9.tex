@@ -10,15 +10,15 @@
     \begin{align}
         \vec{F}=-\vec{\nabla}V(\vec{r}).
     \end{align}
-    Boltzmann 方程
+    故 Boltzmann 方程
     \begin{gather}
         \notag\frac{\partial}{\partial t}f(\vec{r},\vec{p};t)+\left(\frac{\vec{p}}{m}\cdot\vec{\nabla}_{\vec{r}}+\vec{F}\cdot\vec{\nabla}_{\vec{p}}\right)f(\vec{r},\vec{p};t)\\
-        =\int\mathrm{d}^3\vec{p}_2\,\mathrm{d}^3\vec{p}_1'\,\mathrm{d}\vec{p}_2'\abs{T_{if}}^2\delta^4(P'-P)[f(\vec{r},\vec{p}_1';t)f(\vec{r},\vec{p}_2';t)-f(\vec{r},\vec{p};t)f(\vec{r},\vec{p}_2;t)]
+        =\int\mathrm{d}^3\vec{p}_2\,\mathrm{d}^3\vec{p}_1'\,\mathrm{d}^3\vec{p}_2'\abs{T_{if}}^2\delta^4(P'-P)[f(\vec{r},\vec{p}_1';t)f(\vec{r},\vec{p}_2';t)-f(\vec{r},\vec{p};t)f(\vec{r},\vec{p}_2;t)]
     \end{gather}
     可化为
     \begin{gather}
         \notag\frac{\partial}{\partial t}f(\vec{r},\vec{p};t)+\left(\frac{\vec{p}}{m}\cdot\vec{\nabla}_{\vec{r}}-\vec{\nabla}_{\vec{p}}V(\vec{r})\cdot\vec{\nabla}_{\vec{p}}\right)f(\vec{r},\vec{p};t)\\
-        =\int\mathrm{d}^3\vec{p}_2\,\mathrm{d}^3\vec{p}_1'\,\mathrm{d}\vec{p}_2'\abs{T_{if}}^2\delta^4(P'-P)[f(\vec{r},\vec{p}_1';t)f(\vec{r},\vec{p}_2';t)-f(\vec{r},\vec{p};t)f(\vec{r},\vec{p}_2;t)]
+        =\int\mathrm{d}^3\vec{p}_2\,\mathrm{d}^3\vec{p}_1'\,\mathrm{d}^3\vec{p}_2'\,\abs{T_{if}}^2\delta^4(P'-P)[f(\vec{r},\vec{p}_1';t)f(\vec{r},\vec{p}_2';t)-f(\vec{r},\vec{p};t)f(\vec{r},\vec{p}_2;t)]
     \end{gather}
     设 Boltzmann 方程的试探解为
     \begin{align}
@@ -32,24 +32,20 @@
     \end{gather}
     平均动量即为 $\vec{p}_0$：
     \begin{align}
-        \langle\vec{p}\rangle=\frac{\int\mathrm{d}^3\vec{p}\,\vec{p}f(\vec{r},\vec{p};t)}{\int\mathrm{d}\vec{p}\,f(\vec{r},\vec{p};t)}=\frac{\int\mathrm{d}^3\vec{p}\,\vec{p}e^{-A(\vec{p}-\vec{p}_0)^2}}{\int\mathrm{d}^3\vec{p}\,e^{-A(\vec{p}-\vec{p}_0)^2}}=\vec{p}_0.
+        \langle\vec{p}\rangle=\frac{\int\mathrm{d}^3\vec{p}\,\vec{p}f(\vec{r},\vec{p};t)}{\int\mathrm{d}^3\vec{p}\,f(\vec{r},\vec{p};t)}=\frac{\int\mathrm{d}^3\vec{p}\,\vec{p}e^{-A(\vec{p}-\vec{p}_0)^2}}{\int\mathrm{d}^3\vec{p}\,e^{-A(\vec{p}-\vec{p}_0)^2}}=\vec{p}_0.
     \end{align}
     $\vec{p}_0=0$ 时的平均动能可表为
     \begin{gather}
         \varepsilon=\left\langle\frac{p^2}{2m}\right\rangle=\frac{\int\mathrm{d}^3\vec{p}\,\frac{p^2}{2m}f(\vec{r},\vec{p};t)}{\int\mathrm{d}^3\vec{p}\,f(\vec{r},\vec{p};t)}=\frac{\int\mathrm{d}^3\vec{p}\,\frac{p^2}{2m}e^{-A\vec{p}^2}}{\int\mathrm{d}^3\vec{p}\,e^{-A\vec{p}^2}}=\frac{3}{4Am},\\
         \Longrightarrow A=\frac{3}{4m\varepsilon}.
     \end{gather}
-    故试探解可写为
-    \begin{align}
-        f(\vec{r},\vec{p};t)=\left(\frac{3}{4\pi m\varepsilon}\right)\rho(\vec{r},t)\exp\left[-\frac{3}{4m\varepsilon}(\vec{p}-\vec{p}_0)^2\right].
-    \end{align}
     在这一试探解下，
     \begin{align}
         f(\vec{r},\vec{p}_1';t)f(\vec{r},\vec{p}_2';t)=f(\vec{r},\vec{p};t)f(\vec{r},\vec{p}_2;t),
     \end{align}
     故 Boltzmann 方程右侧等于零，从而
     \begin{gather}
-        \frac{\partial}{\partial t}f(\vec{r},\vec{p};t)+\frac{\vec{p}}{m}\cdot\vec{\nabla}_{\vec{r}}f(\vec{r},\vec{p};t)-\nabla_{\vec{r}}V(\vec{r})\cdot\vec{\nabla}_{\vec{p}}f(\vec{r},\vec{p};t)=0,\\
+        \frac{\partial}{\partial t}f(\vec{r},\vec{p};t)+\frac{\vec{p}}{m}\cdot\vec{\nabla}_{\vec{r}}f(\vec{r},\vec{p};t)-\vec{\nabla}_{\vec{r}}V(\vec{r})\cdot\vec{\nabla}_{\vec{p}}f(\vec{r},\vec{p};t)=0,\\
         \label{1}\Longrightarrow\frac{\partial}{\partial t}\rho(\vec{r},t)+\frac{\vec{p}}{m}\cdot\vec{\nabla}_{\vec{r}}\rho(\vec{r},t)-\vec{\nabla}_{\vec{r}}V(\vec{r})\cdot\left[-2A(\vec{p}-\vec{p}_0)\right]\rho(\vec{r},t)=0.
     \end{gather}
     当 $\vec{p}_0=0$ 时，可取
@@ -63,8 +59,8 @@
     其中 $C$ 为待定系数.
     对于一般情况，$\vec{p}_0\neq 0$，需作变换
     \begin{align}
-        \vec{p}\rightarrow\vec{p}-\vec{p}_0,\\
-        \vec{r}\rightarrow\vec{r}-\frac{1}{m}\vec{p}_0t
+        \vec{p}\rightarrow&\vec{p}-\vec{p}_0,\\
+        \vec{r}\rightarrow&\vec{r}-\frac{1}{m}\vec{p}_0t
     \end{align}
     以保证式 \eqref{1} 仍然成立.
     此时，
@@ -75,7 +71,7 @@
     \begin{align}
         f(\vec{r},\vec{p};t)=\frac{3C_2}{4\pi m\varepsilon}\exp\left\{-\frac{3}{2\varepsilon}\left[\frac{(\vec{p}-\vec{p}_0)^2}{2m}+V\left(\vec{r}-\frac{1}{m}\vec{p}_0t\right)\right]\right\}.
     \end{align}
-    其中 $\varepsilon$ 为 $\vec{p}_0$ 时的平均动能，待定系数 $C_2$ 满足归一化条件
+    其中 $\varepsilon$ 为 $\vec{p}_0=0$ 时的平均动能，待定系数 $C_2$ 满足归一化条件
     \begin{align}
         \int\mathrm{d}^3\vec{r}\,\mathrm{d}\vec{p}\,f(\vec{r},\vec{p};t)=N.
     \end{align}
@@ -88,10 +84,67 @@
     \]
     其中
     \[
-        H\equiv\mathrm{d}^3\vec{p}\,f(\vec{p},t)\ln f(\vec{p},t).
+        H\equiv\int\mathrm{d}^3\vec{p}\,f(\vec{p},t)\ln f(\vec{p},t).
     \]
 \end{prob}
 \begin{pf}
-    
+    对于一个均匀且无外力作用的气体，
+    \begin{gather}
+        \vec{\nabla}_{\vec{r}}f=0,\\
+        \vec{F}=0.
+    \end{gather}
+    故 Boltzmann 方程
+    \begin{gather}
+        \notag\frac{\partial}{\partial t}f(\vec{r},\vec{p};t)+\left(\frac{\vec{p}}{m}\cdot\vec{\nabla}_{\vec{r}}+\vec{F}\cdot\vec{\nabla}_{\vec{p}}\right)f(\vec{r},\vec{p};t)\\
+        =\int\mathrm{d}^3\vec{p}_2\,\mathrm{d}^3\vec{p}_1'\,\mathrm{d}^3\vec{p}_2'\,\abs{T_{if}}^2\delta^4(P'-P)[f(\vec{r},\vec{p}_1';t)f(\vec{r},\vec{p}_2';t)-f(\vec{r},\vec{p};t)f(\vec{r},\vec{p}_2;t)]
+    \end{gather}
+    可化为
+    \begin{align}
+        \label{2-Boltzmann}
+        \frac{\partial}{\partial t}f(\vec{p},t)=\int\mathrm{d}^3\vec{p}_2\,\mathrm{d}^3\vec{p}_1'\,\mathrm{d}^3\vec{p}_2'\,\abs{T_{if}}^2\delta^4(P'-P)[f(\vec{p}_1',t)f(\vec{p}_2',t)-f(\vec{p},t)f(\vec{p}_2,t)].
+    \end{align}
+    $\frac{\mathrm{d}H}{\mathrm{d}t}$ 可表为
+    \begin{align}
+        \frac{\mathrm{d}H}{\mathrm{d}t}=&\int\mathrm{d}^3\vec{p}\,\frac{\mathrm{d}f(\vec{p},t)}{\mathrm{d}t}[\ln f(\vec{p},t)+1],
+    \end{align}
+    其中
+    \begin{align}
+        \int\mathrm{d}^3\vec{p}\frac{\mathrm{d}f(\vec{p},t)}{\mathrm{d}t}=\frac{\mathrm{d}}{\mathrm{d}t}\int\mathrm{d}^3\vec{p}\,f(\vec{p})=\frac{\partial N}{\partial t}=0,
+    \end{align}
+    故
+    \begin{align}
+        \frac{\mathrm{d}H}{\mathrm{d}t}=&\int\mathrm{d}^3\vec{p}\,\frac{\mathrm{d}f(\vec{p},t)}{\mathrm{d}t}\ln f(\vec{p},t).
+    \end{align}
+    将 Boltzmann 方程 \eqref{2-Boltzmann} 代入上式得
+    \begin{align}
+        \label{2-dH/dt-1}
+        \frac{\mathrm{d}H}{\mathrm{d}t}=\int\mathrm{d}^3\vec{p}\,\mathrm{d}^3\vec{p}_2\,\mathrm{d}^3\vec{p}_1'\,\mathrm{d}^3\vec{p}_2'\,\abs{T_{if}}^2\delta(P'-P)[f(\vec{p}_1',t)f(\vec{p}_2',t)-f(\vec{p},t)f(\vec{p}_2,t)]\ln f(\vec{p},t)
+    \end{align}
+    根据 $H$ 的定义，$f(\vec{p})$ 相对于 $f(\vec{p}_2)$ 并没有特殊性，由于上式中同时对 $\mathrm{d}^3\vec{p}$ 和 $\mathrm{d}^3\vec{p}_2$ 进行积分，根据对称性，交换碰撞的两个粒子的状态，即交换 $\vec{p}$ 和 $\vec{p}_2$，$\vec{p}_1$ 和 $\vec{p}_2$，上面的等式仍成立，
+    \begin{align}
+        \label{2-dH/dt-2}
+        \frac{\mathrm{d}H}{\mathrm{d}t}=\int\mathrm{d}^3\vec{p}_2\,\mathrm{d}^3\vec{p}\,\mathrm{d}^3\vec{p}_2'\,\mathrm{d}^3\vec{p}_1'\,\abs{T_{ij}}^2\delta(P'-P)[f(\vec{p}_2',t)f(\vec{p}_1',t)-f(\vec{p}_2,t)f(\vec{p},t)]\ln f(\vec{p}_2,t)
+    \end{align}
+    $\frac{\mathrm{d}H}{\mathrm{d}t}$ 又可表为
+    \begin{align}
+        \label{2-dH/dt-3}
+        \notag\frac{\mathrm{d}H}{\mathrm{d}t}=&\frac{1}{2}[\text{式 \eqref{2-dH/dt-1}}+\text{式 \eqref{2-dH/dt-2}}]\\
+        =&\frac{1}{2}\int\mathrm{d}^3\vec{p}\,\mathrm{d}^3\vec{p}_2\,\mathrm{d}^3\vec{p}_1'\,\mathrm{d}^3\vec{p}_2'\,\abs{T_{ij}}^2\delta(P'-P)[f(\vec{p}_1',t)f(\vec{p}_2',t)-f(\vec{p},t)f(\vec{p}_2',t)]\ln[f(\vec{p},t)f(\vec{p}_2,t)].
+    \end{align}
+    根据 $H$ 的定义，$(\vec{p},\vec{p}_2)$ 相对于 $(\vec{p}_1',\vec{p}_2')$ 并没有特殊性，由于上式中同时对 $\mathrm{d}^3\vec{p}$，$\mathrm{d}^3\vec{p}_2$，$\mathrm{d}^3\vec{p}_1'$ 和 $\mathrm{d}^3\vec{p}_2$ 进行积分，根据对称性，交换 $(\vec{p},\vec{p}_2)$ 和 $(\vec{p}_1,\vec{p}_2)$，上面的等式仍然成立，
+    \begin{align}
+        \label{2-dH/dt-4}
+        \notag\frac{\mathrm{d}H}{\mathrm{d}t}=&\frac{1}{2}\int\mathrm{d}^3\vec{p}_1'\,\mathrm{d}^3\vec{p}_2'\,\mathrm{d}^3\vec{p}\,\mathrm{d}^3\vec{p}_2\,\abs{T_{ji}}^2\delta(P-P')[f(\vec{p},t)f(\vec{p}_2,t)-f(\vec{p}_1',t)f(\vec{p}_2',t)]\ln[f(\vec{p}_1',t)f(\vec{p}_2',t)]\\
+        =&\frac{1}{2}\int\mathrm{d}^3\vec{p}_1'\,\mathrm{d}^3\vec{p}_2'\,\mathrm{d}^3\vec{p}\,\mathrm{d}^3\vec{p}_2\,\abs{T_{ij}}^2\delta(P'-P)[f(\vec{p},t)f(\vec{p}_2,t)-f(\vec{p}_1',t)f(\vec{p}_2',t)]\ln[f(\vec{p}_1',t)f(\vec{p}_2',t)]
+    \end{align}
+    $\frac{\mathrm{d}H}{\mathrm{d}t}$ 又可表为
+    \begin{align}
+        \notag\frac{\mathrm{d}H}{\mathrm{d}t}=&\frac{1}{2}[\text{式 \eqref{2-dH/dt-3}}+\text{式 \eqref{2-dH/dt-4}}]\\
+        =&\frac{1}{4}\int\mathrm{d}^3\vec{p}\,\mathrm{d}^3\vec{p}_2\,\mathrm{d}^3\vec{p}_1'\,\mathrm{d}^3\vec{p}_2'\,\abs{T_{ij}}\delta(P'-P)[f(\vec{p}_1',t)f(\vec{p}_2',t)-f(\vec{p},t)f(\vec{p}_2,t)]\ln\frac{f(\vec{p},t)f(\vec{p}_2,t)}{f(\vec{p}_1',t)f(\vec{p}_2',t)}.
+    \end{align}
+    当 $f(\vec{p}_1',t)f(\vec{p}_2',t)\geq f(\vec{p},t)f(\vec{p}_2,t)$，$[f(\vec{p}_1',t)f(\vec{p}_2',t)-f(\vec{p},t)f(\vec{p}_2,t)]\geq 0$，$\ln\frac{f(\vec{p},t)f(\vec{p}_2,t)}{f(\vec{p}_1',t)f(\vec{p}_2',t)}\leq 0$；当 $f(\vec{p}_1',t)f(\vec{p}_2',t)<f(\vec{p},t)f(\vec{p}_2,t)$，$[f(\vec{p}_1',t)f(\vec{p}_2',t)-f(\vec{p},t)f(\vec{p}_2,t)]<0$，$\ln\frac{f(\vec{p},t)f(\vec{p}_2,t)}{f(\vec{p}_1',t)f(\vec{p}_2',t)}>0$，故
+    \begin{align}
+        \frac{\mathrm{d}H}{\mathrm{d}t}=\frac{1}{4}\int\mathrm{d}^3\vec{p}\,\mathrm{d}^3\vec{p}_2\,\mathrm{d}^3\vec{p}_1'\,\mathrm{d}^3\vec{p}_2'\,\abs{T_{ij}}\delta(P'-P)[f(\vec{p}_1',t)f(\vec{p}_2',t)-f(\vec{p},t)f(\vec{p}_2,t)]\ln\frac{f(\vec{p},t)f(\vec{p}_2,t)}{f(\vec{p}_1',t)f(\vec{p}_2',t)}\leq 0.
+    \end{align}
 \end{pf}
 \end{document}
