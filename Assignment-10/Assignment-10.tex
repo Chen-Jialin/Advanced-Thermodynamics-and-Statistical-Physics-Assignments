@@ -1,5 +1,5 @@
 \documentclass{assignment}
-\ProjectInfos{高等热力学与统计物理}{PHYS2110}{2020-2021学年第二学期}{习题 X}{截止时间：2021. 5. 9（周二）}{陈稼霖}{45875852}
+\ProjectInfos{高等热力学与统计物理}{PHYS2110}{2020-2021学年第二学期}{习题 X}{截止时间：2021. 5. 9（周日）}{陈稼霖}{45875852}
 
 \begin{document}
 \begin{prob}
@@ -23,7 +23,51 @@
     \]
     其中 $\mathcal{N}$ 是格点总数，$y$ 是格气的易逸度，$\varepsilon_l(\uparrow\uparrow)=\varepsilon_l(\downarrow\downarrow)$ 表示 Ising 模型中第 $l$ 近邻自旋平行的相互作用能，$\varepsilon_l(\uparrow\downarrow)$ 是相应的自旋反平行的作用能，$n_l$ 为每一格点第 $l$ 近邻的数目.
 \end{prob}
-\begin{sol}
-    
-\end{sol}
+\begin{pf}
+    Ising 模型的能量为
+    \begin{align}
+        \label{1-UI}
+        U_I=\sum_l[N_{\uparrow\uparrow}^l\varepsilon^l(\uparrow\uparrow)+N_{\downarrow\downarrow}\varepsilon^l(\downarrow\downarrow)+N_{\uparrow\downarrow}^l\varepsilon(\uparrow\downarrow)]-\mu H(N_{\uparrow}-N_{\downarrow}),
+    \end{align}
+    其中 $N_{\uparrow\uparrow}^l$ 为第 $l$ 近邻自旋平行向上的对数，$N_{\downarrow\downarrow}^l$ 为第 $l$ 近邻自旋平行向下的对数，$N_{\uparrow\downarrow}^l$ 为第 $l$ 近邻自旋反平行的对数，$\varepsilon^l(\uparrow\uparrow)=\varepsilon^l(\downarrow\downarrow)$ 为第 $l$ 近邻自旋平行的相互作用能，$\varepsilon^l(\uparrow\downarrow)$ 为第 $l$ 近邻自旋反平行的相互作用能，$\mu$ 为格点的磁矩，$H$ 为沿 $z$ 方向的磁场强度.
+    设格点总数为 $\mathcal{N}$，则有
+    \begin{align}
+        N_{\uparrow}+N_{\downarrow}=\mathcal{N}.
+    \end{align}
+    设每个格点的第 $l$ 近邻的数目为 $n_l$，令自旋向上的格点向其第 $l$ 近邻连线，总连线数目为 $n_lN_{\uparrow}$，每对第 $l$ 近邻自旋平行向下贡献两条连线，每对第 $l$ 近邻自旋平行向上贡献一条连线，从而有
+    \begin{align}
+        2N_{\uparrow\uparrow}^l+N_{\uparrow\downarrow}^l=n_lN_{\uparrow},
+    \end{align}
+    同理有
+    \begin{align}
+        2N_{\downarrow\downarrow}+N_{\uparrow\downarrow}=n_lN_{\downarrow}.
+    \end{align}
+    由上面三式，我们可以解得
+    \begin{align}
+        N_{\downarrow}=&\mathcal{N}-N_{\uparrow},\\
+        N_{\uparrow\downarrow}=&n_lN_{\uparrow}-2N_{\uparrow\uparrow}^l,\\
+        N_{\downarrow\downarrow}=&\frac{1}{2}n_l\mathcal{N}-n_lN_{\uparrow}+N_{\uparrow\uparrow}^l.
+    \end{align}
+    将上面三式回代入 Ising 模型能量（式 \eqref{1-UI}）得
+    \begin{align}
+        U_I=2\sum_lN_{\uparrow\uparrow}^l[\varepsilon^l(\uparrow\uparrow)-\varepsilon^l(\uparrow\downarrow)]+N_{\uparrow}^l\left\{\sum_ln_l[\varepsilon_l(\uparrow\downarrow)-\varepsilon_l(\uparrow\uparrow)]-2\mu H\right\}+\mathcal{N}\left[\frac{1}{2}\sum_ln_l\varepsilon_l(\uparrow\uparrow)+\mu H\right]
+    \end{align}
+    Ising 模型的巨配分函数为
+    \begin{align}
+        \mathcal{Q}_I=\sum e^{-\frac{U_I}{kT}}.
+    \end{align}
+    其中求和是对所有自旋分布求和.
+
+    格气的巨配分函数可表为
+    \begin{align}
+        \mathcal{Q}_G=\sum_Ny^N\frac{1}{N!}\sum_{\text{$N$个可区分粒子的分布}}e^{-\frac{U_g}{kT}}=\sum_Ny^N\sum_{\text{$N$个不可区分粒子的分布}}e^{-\frac{1}{kT}\sum_ln_{pp}^lu_l}.
+    \end{align}
+    其中 $n_{pp}^l$ 是第 $l$ 近邻的对数.
+    当我们令 $N=N_{\uparrow}$，$n_{pp}^l=N_{\uparrow\uparrow}^l$，$y=\exp\left\{\frac{1}{kT}\left(2\mu H-\sum_ln_l[\varepsilon_l(\uparrow\downarrow)-\varepsilon_l(\uparrow\uparrow)]\right)\right\}$，$u_l=2[\varepsilon_l(\uparrow\uparrow)-\varepsilon_l(\uparrow\downarrow)]$ 时，
+    \begin{align}
+        \notag\mathcal{Q}_G=&\sum_{N_{\uparrow}=1}^{\mathcal{N}}\exp\left\{\frac{N_{\uparrow}}{kT}(2\mu H-\sum_ln_l[\varepsilon_l(\uparrow\downarrow)-\varepsilon_l(\uparrow\uparrow)])\right\}\sum_{\text{$N_{\uparrow}$ 个 $\uparrow$ 的分布}}\exp\left\{-\frac{1}{kT}\sum_lN_{\uparrow\uparrow}^l\cdot 2[\varepsilon_l(\uparrow\uparrow)-\varepsilon_l(\uparrow\downarrow)]\right\}\\
+        \notag=&\sum_{\text{$\uparrow$ 的分布}}\exp\left\{-\frac{1}{kT}\left[\sum_lN_{\uparrow\uparrow}^l\cdot 2[\varepsilon_l(\uparrow\uparrow)-\varepsilon_l(\uparrow\downarrow)]-N_{\uparrow}[(\varepsilon_l(\uparrow\uparrow)-\varepsilon_l(\uparrow\downarrow))+2\mu H]\right]\right\}\\
+        =&\sum\exp\left\{\frac{\mathcal{N}}{kT}\left[\mu H+\frac{1}{2}\sum_ln_l\varepsilon_l(\uparrow\uparrow)\right]+\frac{1}{kT}U_I\right\}=Q_I\exp\left\{\frac{\mathcal{N}}{kT}\left[\mu H+\frac{1}{2}\sum_ln_l\varepsilon_l(\uparrow\uparrow)\right]\right\}.
+    \end{align}
+\end{pf}
 \end{document}
