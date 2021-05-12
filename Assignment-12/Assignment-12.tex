@@ -6,14 +6,14 @@
     求具有周期边界条件和仅有近邻相互作用 $u$ 的一维格气巨配分函数 $\mathcal{Q}(y)=0$ 的根 $y_1,y_2,\cdots,y_{\mathcal{N}}$，并讨论在 $u>0$ 和 $u<0$ 两种情况下根在复平面上的分布.
 \end{prob}
 \begin{sol}
-    具有周期性边界条件且仅有近邻相互作用的一维 Ising 模型的巨配分函数为
+    具有周期性边界条件且仅有近邻相互作用的一维 Ising 模型的配分函数为
     \begin{align}
         Q_I=\lambda_+^{\mathcal{N}}+\lambda_-^{\mathcal{N}},
     \end{align}
     其中
     \begin{align}
-        \lambda_{\pm}=&\frac{1}{2}\left[x\left(y_I+\frac{1}{y_I}\right)\pm\sqrt{x^2\left(y_I-\frac{1}{y_I}\right)^2+\frac{4}{x^2}}\right],\\
-        x=&e^{-\frac{1}{kT}\varepsilon},\\
+        \lambda_{\pm}=&\frac{1}{2}\left[x_I\left(y_I+\frac{1}{y_I}\right)\pm\sqrt{x_I^2\left(y_I-\frac{1}{y_I}\right)^2+\frac{4}{x_I^2}}\right],\\
+        x_I=&e^{-\frac{1}{kT}\varepsilon},\\
         y_I=&e^{\frac{\mu H}{kT}}.
     \end{align}
     注意 $y_I$ 与格气的经典易逸度 $y$ 区分：
@@ -30,18 +30,18 @@
     \end{align}
     因为
     \begin{align}
-        y_I\lambda_{\pm}=\frac{1}{2}\left[x\left(y_I^2+1\right)\pm\sqrt{x^2\left(y_I^2-1\right)^2+\frac{4y_I^2}{x^2}}\right],
+        y_I\lambda_{\pm}=\frac{1}{2}\left[x_I\left(y_I^2+1\right)\pm\sqrt{x_I^2\left(y_I^2-1\right)^2+\frac{4y_I^2}{x_I^2}}\right],
     \end{align}
     所以
     \begin{align}
         \notag\mathcal{Q}=&e^{\frac{\mathcal{N}\varepsilon}{kT}}\sum_{n=0}^{\lfloor\mathcal{N}/2\rfloor}\left(\begin{matrix}
             \mathcal{N}\\
             2n
-        \end{matrix}\right)\left[x(y_I^2+1)\right]^{\mathcal{N}-2n}\left[\sqrt{x^2(y_I^2-1)+\frac{4y_I^2}{x^2}}\right]^{2n}\\
+        \end{matrix}\right)\left[x_I(y_I^2+1)\right]^{\mathcal{N}-2n}\left[\sqrt{x_I^2(y_I^2-1)+\frac{4y_I^2}{x_I^2}}\right]^{2n}\\
         =&e^{\frac{\mathcal{N}\varepsilon}{kT}}\sum_{n=0}^{\lfloor\mathcal{N}/2\rfloor}\left(\begin{matrix}
             \mathcal{N}\\
             2n
-        \end{matrix}\right)\left[x(y_I^2+1)\right]^{\mathcal{N}-2n}\left[x^2(y_I^2-1)+\frac{4y_I^2}{x^2}\right]^n.
+        \end{matrix}\right)\left[x_I(y_I^2+1)\right]^{\mathcal{N}-2n}\left[x_I^2(y_I^2-1)+\frac{4y_I^2}{x_I^2}\right]^n.
     \end{align}
     注意到
     \begin{align}
@@ -60,17 +60,17 @@
     \end{align}
     从而
     \begin{gather}
-        x(y_I^2+1)+\sqrt{x^2(y_I^2-1)^2+\frac{4y_I^2}{x^2}}=\omega\left[x(y_I^2+1)-\sqrt{x^2(y_I^2-1)^2+\frac{4y_I^2}{x^2}}\right],\\
-        \Longrightarrow y_I^4+2\left[1-\frac{(\omega+1)^2}{2\omega}\frac{x^4-1}{x^4}\right]y_I^2+1=0.
+        x_I(y_I^2+1)+\sqrt{x_I^2(y_I^2-1)^2+\frac{4y_I^2}{x_I^2}}=\omega\left[x_I(y_I^2+1)-\sqrt{x_I^2(y_I^2-1)^2+\frac{4y_I^2}{x_I^2}}\right],\\
+        \Longrightarrow y_I^4+2\left[1-\frac{(\omega+1)^2}{2\omega}\frac{x_I^4-1}{x_I^4}\right]y_I^2+1=0.
     \end{gather}
     由于 $\omega$ 的模为 $1$，不妨设 $\omega=e^{i\theta}$，则上面的方程可化为
     \begin{align}
         y_I^4+2\left[1-\left(1+\cos\theta\right)\frac{x^4-1}{x^4}\right]y_I^2+1=0.
     \end{align}
 
-    当 $u>0$，$x<1$，$\left[1-\left(1+\cos\theta\right)\frac{x^4-1}{x^4}\right]<1$，方程有一对共轭负根 $y_{I,1},y_{I,2}$，由于$y_{I,1},y_{I,2}$乘积为 $1$，故这两根在单位圆上，而最终由式 \eqref{1-YI-y} 可以求得对应的 $y_1$ 和 $y_2$ 在以原点为圆心半径为 $e^{-\frac{4\varepsilon}{kT}}$ 的圆上，又由于 $\omega$ 可以有 $\mathcal{N}$ 个取值，但在 $\theta\rightarrow-\theta$ 对称下，方程实际上不变，故实际上有 $y_1,y_2,\cdots,y_{\mathcal{N}}$ 共计 $\mathcal{N}$ 个根在以原点为圆心，半径为 $e^{-\frac{4\varepsilon}{kT}}$ 的圆上.
+    当 $u>0$，$x_I<1$，$\left[1-\left(1+\cos\theta\right)\frac{x_I^4-1}{x_I^4}\right]<1$，方程有一对共轭负根 $y_{I,1},y_{I,2}$，由于$y_{I,1},y_{I,2}$乘积为 $1$，故这两根在单位圆上，而最终由式 \eqref{1-YI-y} 可以求得对应的 $y_1$ 和 $y_2$ 在以原点为圆心半径为 $e^{-\frac{4\varepsilon}{kT}}$ 的圆上，又由于 $\omega$ 可以有 $\mathcal{N}$ 个取值，但在 $\theta\rightarrow-\theta$ 对称下，方程实际上不变，故实际上有 $y_1,y_2,\cdots,y_{\mathcal{N}}$ 共计 $\mathcal{N}$ 个根在以原点为圆心，半径为 $e^{-\frac{4\varepsilon}{kT}}$ 的圆上.
 
-    当 $u<0$，$x>1$，$\left[1-\left(1+\cos\theta\right)\frac{x^4-1}{x^4}\right]>1$，故方程有两个负实根 $y_{I,1},y_{I,2}$，同理可以由式 \eqref{1-YI-y} 和 $\omega$ 的不同取值得到 $y_1,y_2,\cdots,y_{\mathcal{N}}$ 共计 $\mathcal{N}$ 个实根.
+    当 $u<0$，$x_I>1$，$\left[1-\left(1+\cos\theta\right)\frac{x_I^4-1}{x_I^4}\right]>1$，故方程有两个负实根 $y_{I,1},y_{I,2}$，同理可以由式 \eqref{1-YI-y} 和 $\omega$ 的不同取值得到 $y_1,y_2,\cdots,y_{\mathcal{N}}$ 共计 $\mathcal{N}$ 个实根.
 \end{sol}
 
 \begin{prob}
@@ -84,6 +84,45 @@
     \]
 \end{prob}
 \begin{pf}
-
+    一维格气的巨配分函数为
+    \begin{align}
+        \mathcal{Q}=e^{\frac{\mathcal{N}\varepsilon}{kT}}y_I^{\mathcal{N}}(\lambda_+^{\mathcal{N}}+\lambda_-^{\mathcal{N}})
+    \end{align}
+    其中
+    \begin{align}
+        y_I\lambda_{\pm}=\frac{1}{2}\left[x_I(y_I^2+1)\pm\sqrt{x_I^2(y_I^2-1)^2+\frac{4y_I^2}{x_I^2}}\right].
+    \end{align}
+    由于 $\lambda_+>\lambda_-$，当 $\mathcal{N}\rightarrow\infty$，巨配分函数可近似为
+    \begin{align}
+        \mathcal{Q}\approx e^{\frac{\mathcal{N}\varepsilon}{kT}}y_I^{\mathcal{N}}\lambda_+^{\mathcal{N}}=e^{\frac{\mathcal{N}u}{kT}}y_I^{\mathcal{N}}\lambda_+^{\mathcal{N}}
+    \end{align}
+    由于
+    \begin{align}
+        x_I=&e^{-\frac{\varepsilon}{kT}}=x^{-1/4},\\
+        y_I=&y^{1/2}e^{-\frac{2\varepsilon}{kT}}=y^{1/2}e^{-\frac{u}{2kT}}=y^{1/2}x^{-1/2},
+    \end{align}
+    故
+    \begin{align}
+        y_I\lambda_{\pm}=\frac{1}{2}\left[x^{-1/4}(yx^{-1}+1)\pm\sqrt{x^{-1/2}(yx^{-1}-1)^2+\frac{4yx^{-1}}{x^{-1/2}}}\right],
+    \end{align}
+    从而巨配分函数可表为
+    \begin{align}
+        \mathcal{Q}=x^{\mathcal{N}/4}y_I^{\mathcal{N}}\lambda_+^{\mathcal{N}}=\exp\left\{\frac{\mathcal{N}}{2}\left[\left(\frac{y}{x}+1\right)\right]+\sqrt{\left(1-\frac{y}{x}\right)^2+4y}\right\}.
+    \end{align}
+    一维格气的压强为
+    \begin{align}
+        \frac{P}{kT}=\frac{1}{\mathcal{N}}\ln\mathcal{Q}=\ln\left[1+\frac{y}{x}+\sqrt{\left(1-\frac{y}{x}\right)^2+4y}\right]-\ln 2.
+    \end{align}
+    % 对应 Ising 模型的磁化强度为
+    % \begin{align}
+    %     \notag M=&\frac{\langle N_{\uparrow}N_{\downarrow}\rangle}{\mathcal{N}}=\frac{1}{\mathcal{N}}\frac{kT}{\mu}\left(\frac{\partial}{\partial H}\ln Q_I\right)_T\approx\frac{kT}{\mu}\left(\frac{\partial}{\partial H}\ln\lambda_+\right)_T=\frac{kT}{\mu\lambda_+}\frac{\partial\lambda_+}{\partial H}\\
+    %     \notag=&\frac{kT}{2\mu\lambda_+}\left[x_I\left(1-\frac{1}{y_I^2}\right)+\frac{x_I^2\left(1+\frac{1}{y_I^2}\right)\left(y_I-\frac{1}{y_I}\right)}{\sqrt{x_I^2\left(y_I-\frac{1}{y_I}\right)^2+\frac{4}{x_I^2}}}\right]\frac{\partial y_I}{\partial H}\\
+    %     \notag=&\frac{kT}{2\mu\lambda_+}\left[x_I\left(1-\frac{1}{y_I^2}\right)+\frac{x_I^2\left(1+\frac{1}{y_I^2}\right)\left(1-\frac{1}{y_I^2}\right)}{\sqrt{x_I^2\left(1-\frac{1}{y_I^2}\right)^2+\frac{4}{x_I^2}}}\right]\frac{\mu}{kT}y_I\\
+    %     =&\frac{y_I}{2\lambda_+}\left[x_I\left(1-\frac{1}{y_I^2}\right)+\frac{x_I^2\left(1+\frac{1}{y_I^2}\right)\left(1-\frac{1}{y_I^2}\right)}{\sqrt{x_I^2\left(1-\frac{1}{y_I^2}\right)^2+\frac{4}{x_I^2}}}\right].
+    % \end{align}
+    格气的粒子数密度为
+    \begin{align}
+        \rho=y\frac{\partial}{\partial y}\frac{P}{kT}=y\frac{\frac{1}{x}+\frac{-\frac{1}{x}\left(1-\frac{y}{x}\right)+4}{\sqrt{(1-\frac{y}{x})^2+4y}}}{1+\frac{y}{x}+\sqrt{\left(1-\frac{y}{x}\right)^2+4y}}.
+    \end{align}
 \end{pf}
 \end{document}
