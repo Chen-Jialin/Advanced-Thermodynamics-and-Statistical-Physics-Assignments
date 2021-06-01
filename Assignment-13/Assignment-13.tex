@@ -21,6 +21,81 @@
     \end{itemize}
 \end{prob}
 \begin{sol}
-    
+    \begin{itemize}
+        \item[i)] 
+        两体散射体系的哈密顿量为
+        \begin{align}
+            H=-\frac{\hbar^2}{2m}\nabla^2+U(r),
+        \end{align}
+        其中直径为 $a$ 的硬球势为
+        \begin{align}
+            U(r)=\left\{\begin{array}{ll}
+                +\infty,&r\leq a,\\
+                0,&r>a.
+            \end{array}\right.
+        \end{align}
+        设
+        \begin{align}
+            V(r)=\frac{2m}{\hbar^2}U(r),
+        \end{align}
+        则薛定谔方程
+        \begin{align}
+            -\frac{\hbar^2}{2m}\nabla^2\psi+U(r)\psi=E\psi,
+        \end{align}
+        化为
+        \begin{align}
+            \nabla^2\psi+[k^2-V(r)]\psi=0.
+        \end{align}
+        取沿粒子入射方向且通过散射中心的轴线为 $z$ 轴，对 $s$ 波，薛定谔方程的通解写为
+        \begin{align}
+            \psi(r,\theta)=\sum_lR_l(r)P_l(\cos\theta)
+        \end{align}
+        其径向波函数满足
+        \begin{align}
+            \frac{1}{r^2}\frac{\mathrm{d}}{\mathrm{d}r}\left(r^2\frac{\mathrm{d}R_l}{\mathrm{d}r}\right)+\left[k^2-V(r)-\frac{l(l+1)}{r}^2\right]R_l(r)=0
+        \end{align}
+        令 $R_l(r)=\frac{U_l(r)}{r}$，代入上式得
+        \begin{align}
+            \frac{\mathrm{d}^2U_l}{\mathrm{d}r^2}+\left[k^2-V(r)-\frac{l(l+1)}{r^2}\right]U_l(r)=0
+        \end{align}
+        对 $s$ 波，$l=0$，在 $r>a$ 处上述方程可化为
+        \begin{align}
+            \frac{\mathrm{d}^2U_l}{\mathrm{d}r^2}+k^2U_l(r)=0,\quad r>a
+        \end{align}
+        其解为
+        \begin{align}
+            U_l(r)=A_0\sin\left(kr+\delta_0\right),\quad r>a.
+        \end{align}
+        而在 $r\leq a$ 处，由于势能无穷大，故 $\psi=0$，即 $R_0(r)=0$，从而 $U_0(r)=0$.
+        由于 $R_0(r)$ 在 $r=a$ 处连续，因此 $U_0(r)$ 在 $r=a$ 处连续，即
+        \begin{gather}
+            A\sin\left(ka+\delta_0\right)=0,\\
+            \Longrightarrow\delta_0=-ka.
+        \end{gather}
+        \item[ii)] 对于自旋为零的 Bose 气体，根据 Beth-Uhlenbeck 公式
+        \begin{align}
+            b_2^S=b_2^{S(0)}+\frac{2^{3/2}}{\lambda^3}\left[\sum_{\text{even }l}e^{-\beta\varepsilon_B}+\frac{1}{\pi}\sum_{\text{even }l}(2l+1)\int_0^{\infty}\mathrm{d}k\,e^{-\frac{\beta}{m}\hbar^2k^2}\frac{\mathrm{d}\delta_l}{\mathrm{d}k}\right],
+        \end{align}
+        其中
+        \begin{align}
+            b_2^{S(0)}=\frac{1}{2^{5/2}\lambda^3},
+        \end{align}
+        由于气体原子的势能是硬球势，所以不存在束缚态，中括号中第一个求和式
+        \begin{align}
+            \sum_{\text{even }l}e^{-\beta\varepsilon_B}=0,
+        \end{align}
+        中括号中第二个求和式
+        \begin{align}
+            \notag\frac{1}{\pi}\sum_{\text{even }l}(2l+1)\int_0^{\infty}\mathrm{d}k\,e^{-\beta\hbar^2k^2}\frac{\mathrm{d}\delta_l}{\mathrm{d}k}=&\frac{1}{\pi}\int_0^{\infty}\mathrm{d}k\,e^{-\beta\hbar^2k^2}\frac{\mathrm{d}\delta_0}{\mathrm{d}k}+\frac{1}{\pi}\sum_{l=2,4,6,\cdots}(2l+1)\int_0^{\infty}\mathrm{d}k\,e^{-\beta\hbar^2k^2}\frac{\mathrm{d}\delta_l}{\mathrm{d}k}\\
+            \notag\approx&\frac{1}{\pi}\int_0^{\infty}\mathrm{d}k\,e^{-\frac{\beta}{m}\hbar^2k^2}\frac{\mathrm{d}(-ka)}{\mathrm{d}k}+\frac{1}{\pi}\sum_{l=2,4,6,\cdots}(2l+1)\int_0^{\infty}\mathrm{d}k\,e^{-\frac{\beta}{m}\hbar^2k^2}\frac{\mathrm{d}(ka)^{2l+1}}{\mathrm{d}k}\\
+            \notag=&-\frac{a}{\pi}\int_0^{\infty}\mathrm{d}k\,e^{-\frac{\beta}{m}\hbar^2k^2}+\frac{1}{\pi}\sum_{l=2,4,6,\cdots}a^{2l+1}(2l+1)^2\int_0^{\infty}\mathrm{d}k\,e^{-\frac{\beta}{m}\hbar^2k^2}k^{2l}\\
+            \notag=&-\frac{a}{\pi}\frac{1}{2}\sqrt{\frac{m\pi}{\beta\hbar^2}}+\frac{1}{\pi}\sum_{l=2,4,6,\cdots}a^{2l+1}(2l+1)^2\int_0^{\infty}\mathrm{d}k\,e^{-\beta\hbar^2k^2}k^{2l}\\
+            =&\frac{a}{\sqrt{2}\lambda}+O\left(\frac{a^5}{\lambda^5}\right).
+        \end{align}
+        因此，
+        \begin{align}
+            b_2=\frac{1}{\lambda^3}\left[2^{-5/2}-\frac{2a}{\lambda}+O\left(\frac{a^5}{\lambda^5}\right)\right].
+        \end{align}
+    \end{itemize}
 \end{sol}
 \end{document}
