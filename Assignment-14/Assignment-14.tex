@@ -67,7 +67,7 @@
     \end{align}
     代入动能（式 \eqref{2-Kinetic-Energy}）中可得
     \begin{align}
-        K=\sum_s\sum_{\vec{p},\vec{p}'}\frac{p^2}{2m}a_{\vec{p}',s}^{\dagger}a_{\vec{p},s}\frac{1}{V}\int\mathrm{d}\vec{r}\,e^{\frac{i}{\hbar}(\vec{p}-\vec{p}')\cdot\vec{r}}=\sum_s\sum_{\vec{p},\vec{p}'}\frac{p^2}{2m}a_{\vec{p}',s}^{\dagger}a_{\vec{p},s}\delta(\vec{p}-\vec{p}')=\sum_s\sum_{\vec{p}}\frac{p^2}{2m}a_{\vec{p},s}^{\dagger}a_{\vec{p},s}.
+        K=\sum_s\sum_{\vec{p},\vec{p}'}\frac{p^2}{2m}a_{\vec{p}',s}^{\dagger}a_{\vec{p},s}\frac{1}{V}\int\mathrm{d}\vec{r}\,e^{\frac{i}{\hbar}(\vec{p}-\vec{p}')\cdot\vec{r}}=\sum_s\sum_{\vec{p},\vec{p}'}\frac{p^2}{2m}a_{\vec{p}',s}^{\dagger}a_{\vec{p},s}\delta_{\vec{p},\vec{p}'}=\sum_s\sum_{\vec{p}}\frac{p^2}{2m}a_{\vec{p},s}^{\dagger}a_{\vec{p},s}.
     \end{align}
     相互作用能
     \begin{align}
@@ -81,7 +81,7 @@
     将上式和场算符（式 \eqref{2-Field-Op}, \eqref{2-Field-Op-dagger}）代入相互作用能（式 \eqref{2-Interaction-Energy}）中可得
     \begin{align}
         \notag K=&\frac{1}{2}\sum_{s_1,s_2}\sum_{\vec{p}_1,\vec{p}_1',\vec{p}_2,\vec{p}_2'}a_{\vec{p}_1',s_1}^{\dagger}a_{\vec{p}_2',s_2}^{\dagger}a_{\vec{p}_2,s_2}a_{\vec{p}_1,s_1}\frac{1}{V^2}\int\mathrm{d}^3\vec{r}_1\,e^{\frac{i}{\hbar}(\vec{p}_1-\vec{p}_1')\cdot\vec{r}_1}\int\mathrm{d}^3\vec{r}_2\,e^{\frac{i}{\hbar}(\vec{p}_2-\vec{p}_2')\cdot\vec{r}_2}\int\mathrm{d}^3\vec{q}\,e^{-\frac{i}{\hbar}\vec{q}\cdot\vec{r}}u_{\vec{q}}\\
-        \notag=&\frac{1}{2}\sum_{s_1,s_2}\sum_{\vec{p}_1,\vec{p}_1',\vec{p}_2,\vec{p}_2'}a_{\vec{p}_1',s_1}^{\dagger}a_{\vec{p}_2',s_2}^{\dagger}a_{\vec{p}_2,s_2}a_{\vec{p}_1,s_1}\delta(\vec{p}_1-\vec{p}_1')\delta(\vec{p}_2-\vec{p}_2')\frac{1}{V}\int\mathrm{d}^3\vec{q}\,e^{-\frac{i}{\hbar}\vec{q}\cdot\vec{r}}u_{\vec{q}}\\
+        \notag=&\frac{1}{2}\sum_{s_1,s_2}\sum_{\vec{p}_1,\vec{p}_1',\vec{p}_2,\vec{p}_2'}a_{\vec{p}_1',s_1}^{\dagger}a_{\vec{p}_2',s_2}^{\dagger}a_{\vec{p}_2,s_2}a_{\vec{p}_1,s_1}\delta_{\vec{p}_1,\vec{p}_1'}\delta_{\vec{p}_2,\vec{p}_2'}\frac{1}{V}\int\mathrm{d}^3\vec{q}\,e^{-\frac{i}{\hbar}\vec{q}\cdot\vec{r}}u_{\vec{q}}\\
         =&\frac{1}{2}\sum_{s_1,s_2}\sum_{\vec{p}_1,\vec{p}_2}a_{\vec{p}_1,s_1}^{\dagger}a_{\vec{p}_2}^{\dagger}a_{\vec{p}_2,s_2}a_{\vec{p}_1,s_1}\frac{1}{V}\int\mathrm{d}^3\vec{q}\,e^{-\frac{i}{\hbar}\vec{q}\cdot\vec{r}}u_{\vec{q}}.
     \end{align}
     因此，该电子系统哈密顿量可写为
