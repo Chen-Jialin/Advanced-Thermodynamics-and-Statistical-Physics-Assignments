@@ -12,9 +12,32 @@
 \end{prob}
 \begin{pf}
     \begin{itemize}
-        \item[i)] 
-        \item[ii)] 
-        \item[iii)] 
+        \item[i)] Boson 的相干态可写为
+        \begin{align}
+            \lvert z\rangle=e^{za^{\dagger}}\lvert 0\rangle=c_0\sum_{n=0}^{\infty}\frac{z^n}{\sqrt{n!}}\lvert n\rangle.
+        \end{align}
+        由归一化条件
+        \begin{align}
+            \langle z\vert z\rangle=\abs{c_0}^2\sum_{n=0}^{\infty}\frac{z^{*n}}{\sqrt{n!}}\sum_{m=0}^{\infty}\frac{z^m}{\sqrt{m!}}\langle n\vert m\rangle=\abs{c_0}^2\sum_{n=0}^{\infty}\frac{z^{*n}}{\sqrt{n!}}\sum_{m=0}^{\infty}\frac{z^m}{\sqrt{m!}}\delta_{nm}=\abs{c_0}^2\sum_{n=0}^{\infty}\frac{\abs{z}^{2n}}{n!}=\abs{c_0}^2e^{\abs{z}^2}=1,
+        \end{align}
+        得归一化系数
+        \begin{align}
+            \abs{c_0}=e^{-\frac{1}{2}\abs{z}^2}.
+        \end{align}
+        \item[ii)] 粒子数平均值为
+        \begin{align}
+            \notag\langle n\rangle=&\langle z\rvert a^{\dagger}a\lvert z\rangle=\abs{c_0}^2\sum_{n=0}^{\infty}\frac{z^{*n}}{\sqrt{n!}}\sum_{m=0}^{\infty}\frac{z^m}{\sqrt{m!}}\langle n\rvert a^{\dagger}a\lvert m\rangle=\abs{c_0}^2\sum_{n=0}^{\infty}\frac{z^{*n}}{\sqrt{n!}}\sum_{m=0}^{\infty}\frac{z^m}{\sqrt{m!}}m\delta_{nm}=\abs{c_0}^2\sum_{n=1}^{\infty}\frac{\abs{z}^{2n}}{(n-1)!}\\
+            =&\abs{z}^2\abs{c_0}^2\sum_{n=1}^{\infty}\frac{\abs{z}^{2(n-1)}}{(n-1)!}=\abs{z}^2\abs{c_0}^2\sum_{n=0}^{\infty}\frac{\abs{z}^{2n}}{n!}=\abs{z}^2\abs{c_0}^2e^{\abs{z}^2}=\abs{z}^2.
+        \end{align}
+        \item[iii)] 粒子数平方的平均值为
+        \begin{align}
+            \langle n^2\rangle=&\langle z\rvert a^{\dagger}aa^{\dagger}a\lvert z\rangle=\abs{c_0}^2\sum_{n=0}^{\infty}\frac{z^{*n}}{\sqrt{n!}}\sum_{m=0}^{\infty}\frac{z^m}{\sqrt{m!}}\langle n\rvert a^{\dagger}aa^{\dagger}a\lvert m\rangle=\abs{c_0}^2\sum_{n=0}^{\infty}\frac{z^{*n}}{\sqrt{n!}}\sum_{m=0}^{\infty}\frac{z^m}{\sqrt{m!}}m^2\delta_{nm}\\
+            =&\abs{c_0}^2\sum_{n=0}^{\infty}\frac{n^2\abs{z}^{2n}}{n!}=\abs{c_0}^2e^{\abs{z}^2}\abs{z}^2(\abs{z}^2+1)=\abs{z}^2(\abs{z}^2+1).
+        \end{align}
+        粒子数的涨落为
+        \begin{align}
+            \frac{\Delta n}{\langle n\rangle}=\frac{\sqrt{\langle n^2\rangle-\langle n\rangle^2}}{\langle n\rangle}=\frac{1}{\abs{z}}.
+        \end{align}
     \end{itemize}
 \end{pf}
 
