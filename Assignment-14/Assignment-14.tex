@@ -44,11 +44,49 @@
 \begin{prob}
     一个电子系统由下列 Hamiltonian 描述
     \begin{align}
-        \mathcal{H}=-\frac{\hbar^2}{2m}\sum_s\int\mathrm{d}^3\vec{r}\,\psi_s^{\dagger}(\vec{r})\nabla^2\psi_s(\vec{r})+\frac{1}{2}\sum_{s_1,s_2}\int\mathrm{d}^3\vec{r}_1\,\mathrm{d}^3\vec{r}_2\,\psi_{s_1}^{\dagger}(\vec{r}_1)\psi_2^{\dagger}(\vec{r}_2)u(\abs{\vec{r}_1-\vec{r}_2})\psi_{s_2}(\vec{r}_2)\psi_{s_1}(\vec{r}_1)
+        \label{2-Kinetic-Energy}
+        \mathcal{H}=-\frac{\hbar^2}{2m}\sum_s\int\mathrm{d}^3\,\vec{r}\,\psi_s^{\dagger}(\vec{r})\nabla^2\psi_s(\vec{r})+\frac{1}{2}\sum_{s_1,s_2}\int\mathrm{d}^3\vec{r}_1\,\mathrm{d}^3\vec{r}_2\,\psi_{s_1}^{\dagger}(\vec{r}_1)\psi_{s_2}^{\dagger}(\vec{r}_2)u(\abs{\vec{r}_1-\vec{r}_2})\psi_{s_2}(\vec{r}_2)\psi_{s_1}(\vec{r}_1)
     \end{align}
-    其中 $s$ 代表自旋的两个分量. 试写出次 Hamiltonian 用动量-自旋态的湮灭产生算符 $a_{\vec{p},s}$, $a_{\vec{p},s}^{\dagger}$ 和 $u(\abs{\vec{r}_1-\vec{r}_2})$ 的 Fourier 变换 $u_{\vec{q}}=\int\mathrm{d}^3\vec{r}e^{-\frac{i}{\hbar}\vec{q}\cdot\vec{r}}u(r)$ 表示的形式.
+    其中 $s$ 代表自旋的两个分量. 试写出此 Hamiltonian 用动量-自旋态的湮灭产生算符 $a_{\vec{p},s}$, $a_{\vec{p},s}^{\dagger}$ 和 $u(\abs{\vec{r}_1-\vec{r}_2})$ 的 Fourier 变换 $u_{\vec{q}}=\int\mathrm{d}^3\vec{r}\,e^{-\frac{i}{\hbar}\vec{q}\cdot\vec{r}}u(r)$ 表示的形式.
 \end{prob}
 \begin{pf}
-
+    动能
+    \begin{align}
+        K\equiv-\frac{\hbar^2}{2m}\sum_s\int\mathrm{d}^3\vec{r}\,\psi_s^{\dagger}(\vec{r})\nabla^2\psi_s(\vec{r}),
+    \end{align}
+    其中场算符
+    \begin{align}
+        \label{2-Field-Op}
+        \psi_s(\vec{r})=&\frac{1}{\sqrt{V}}\sum_{\vec{p}}a_{\vec{p},s}e^{\frac{i}{\hbar}\vec{p}\cdot\vec{r}},\\
+        \label{2-Field-Op-dagger}
+        \psi_s^{\dagger}(\vec{r})=&\frac{1}{\sqrt{V}}\sum_{\vec{p}}a_{\vec{p},s}^{\dagger}e^{-\frac{i}{\hbar}\vec{p}\cdot\vec{r}},
+    \end{align}
+    而动量算符
+    \begin{align}
+        \nabla=\frac{i}{\hbar}\hat{\vec{p}}.
+    \end{align}
+    代入动能（式 \eqref{2-Kinetic-Energy}）中可得
+    \begin{align}
+        K=\sum_s\sum_{\vec{p},\vec{p}'}\frac{p^2}{2m}a_{\vec{p}',s}^{\dagger}a_{\vec{p},s}\frac{1}{V}\int\mathrm{d}\vec{r}\,e^{\frac{i}{\hbar}(\vec{p}-\vec{p}')\cdot\vec{r}}=\sum_s\sum_{\vec{p},\vec{p}'}\frac{p^2}{2m}a_{\vec{p}',s}^{\dagger}a_{\vec{p},s}\delta(\vec{p}-\vec{p}')=\sum_s\sum_{\vec{p}}\frac{p^2}{2m}a_{\vec{p},s}^{\dagger}a_{\vec{p},s}.
+    \end{align}
+    相互作用能
+    \begin{align}
+        \label{2-Interaction-Energy}
+        \Omega\equiv\frac{1}{2}\sum_{s_1,s_2}\int\mathrm{d}^3\vec{r}_1\,\mathrm{d}^3\vec{r}_2\,\psi_{s_1}^{\dagger}(\vec{r}_1)\psi_{s_2}(\vec{r}_2)u(\abs{\vec{r}_1-\vec{r}_2})\psi_{s_2}(\vec{r}_2)\psi_{s_1}(\vec{r}_1),
+    \end{align}
+    其中相互作用势的 Fourier 变换
+    \begin{align}
+        u(\abs{\vec{r}_1-\vec{r}_2})=\frac{1}{V}\int\mathrm{d}^3\,\vec{q}e^{\frac{i}{\hbar}\vec{q}\cdot\vec{r}}u_{\vec{q}}.
+    \end{align}
+    将上式和场算符（式 \eqref{2-Field-Op}, \eqref{2-Field-Op-dagger}）代入相互作用能（式 \eqref{2-Interaction-Energy}）中可得
+    \begin{align}
+        \notag K=&\frac{1}{2}\sum_{s_1,s_2}\sum_{\vec{p}_1,\vec{p}_1',\vec{p}_2,\vec{p}_2'}a_{\vec{p}_1',s_1}^{\dagger}a_{\vec{p}_2',s_2}^{\dagger}a_{\vec{p}_2,s_2}a_{\vec{p}_1,s_1}\frac{1}{V^2}\int\mathrm{d}^3\vec{r}_1\,e^{\frac{i}{\hbar}(\vec{p}_1-\vec{p}_1')\cdot\vec{r}_1}\int\mathrm{d}^3\vec{r}_2\,e^{\frac{i}{\hbar}(\vec{p}_2-\vec{p}_2')\cdot\vec{r}_2}\int\mathrm{d}^3\vec{q}\,e^{-\frac{i}{\hbar}\vec{q}\cdot\vec{r}}u_{\vec{q}}\\
+        \notag=&\frac{1}{2}\sum_{s_1,s_2}\sum_{\vec{p}_1,\vec{p}_1',\vec{p}_2,\vec{p}_2'}a_{\vec{p}_1',s_1}^{\dagger}a_{\vec{p}_2',s_2}^{\dagger}a_{\vec{p}_2,s_2}a_{\vec{p}_1,s_1}\delta(\vec{p}_1-\vec{p}_1')\delta(\vec{p}_2-\vec{p}_2')\frac{1}{V}\int\mathrm{d}^3\vec{q}\,e^{-\frac{i}{\hbar}\vec{q}\cdot\vec{r}}u_{\vec{q}}\\
+        =&\frac{1}{2}\sum_{s_1,s_2}\sum_{\vec{p}_1,\vec{p}_2}a_{\vec{p}_1,s_1}^{\dagger}a_{\vec{p}_2}^{\dagger}a_{\vec{p}_2,s_2}a_{\vec{p}_1,s_1}\frac{1}{V}\int\mathrm{d}^3\vec{q}\,e^{-\frac{i}{\hbar}\vec{q}\cdot\vec{r}}u_{\vec{q}}.
+    \end{align}
+    因此，该电子系统哈密顿量可写为
+    \begin{align}
+        \mathcal{H}=\sum_s\sum_{\vec{p}}\frac{p^2}{2m}a_{\vec{p}}^{\dagger}a_{\vec{p}}+\frac{1}{2}\sum_{s_1,s_2}\sum_{\vec{p}_1,\vec{p}_2}a_{\vec{p}_1,s_1}^{\dagger}a_{\vec{p}_2}^{\dagger}a_{\vec{p}_2,s_2}a_{\vec{p}_1,s_1}\frac{1}{V}\int\mathrm{d}^3\vec{q}\,e^{-\frac{i}{\hbar}\vec{q}\cdot\vec{r}}u_{\vec{q}}.
+    \end{align}
 \end{pf}
 \end{document}
